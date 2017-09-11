@@ -121,9 +121,11 @@
             this.checkBox1.TabIndex = 9;
             this.checkBox1.Text = "24 hour mode";
             this.checkBox1.UseVisualStyleBackColor = true;
+            this.checkBox1.CheckedChanged += new System.EventHandler(this.checkBox1_CheckedChanged);
             // 
             // timeBox
             // 
+            this.timeBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.timeBox.FormattingEnabled = true;
             this.timeBox.Location = new System.Drawing.Point(96, 210);
             this.timeBox.Name = "timeBox";
@@ -158,6 +160,7 @@
             this.Controls.Add(this.eventNameBox);
             this.Name = "EventInfo";
             this.Text = "EventInfo";
+            this.Load += new System.EventHandler(this.EventInfo_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
