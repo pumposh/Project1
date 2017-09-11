@@ -36,7 +36,8 @@ namespace Project1
         /// <param name="e">The <see cref="EventArgs"/> instance containing the event data.</param>
         private void availabilityButton_Click(object sender, EventArgs e)
         {
-            
+            AvailabilityForm availabilityForm = new AvailabilityForm();
+            availabilityForm.Show();
         }
     }
 }
