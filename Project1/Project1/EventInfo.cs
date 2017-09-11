@@ -31,45 +31,43 @@ namespace Project1
 
         private void SortListBox()
         {
-		int listBoxLength = listBox1.Items.Count;
-		DateTime[] time = new DateTime[listBoxLength - 1];//Array to hold new ordered dateTimes
+            int listBoxLength = listBox1.Items.Count;
+            DateTime[] time = new DateTime[listBoxLength];//Array to hold new ordered dateTimes
 
-		//Copies items in listBox1 to an array
-		for(int i=0;i<listBoxLength - 1;i++)
-		{
-			time[i] = (DateTime)listBox1.Items[i];
-		}
-		
-		listBox1.Items.Clear();//clears listbox after all items have been copied
+            //Copies items in listBox1 to an array
+            for (int i = 0; i < listBoxLength; i++)
+            {
+                time[i] = DateTime.Parse(listBox1.Items[i].ToString());
+            }
 
-		DateTime swapHolder = time[0];//holds a DateTime for swapping so no data is lost
-		int k = 0;//holds position of lowest DateTime that has not been sorted
+            listBox1.Items.Clear();//clears listbox after all items have been copied
 
-		//Sorts items in array
-		for(int i=0;i<listBoxLength - 1;i++)
-		{
-			//currentLowest = time[i];
-			for(int j=i;j<listBoxLength - 1;j++)
-			{
-				if(time[j].Hour < time[k].Minute)
-				{
-					if(time[j].Minute < time[k].Minute)
-					{
-						k = j;
-						//currentLowest = time[j];
-					}
-				}
-			}
-			swapHolder = time[i];
-			time[i] = time[k];
-			time[k] = swapHolder;
-		}
-		
-		//puts new sorted times in listbox
-		for(int i = 0;i<listBoxLength;i++)
-		{
-			listBox1.Items.Add(time[i]);
-		}
+            DateTime swapHolder = time[0];//holds a DateTime for swapping so no data is lost
+            int k = 0;//holds position of lowest DateTime that has not been sorted
+
+            //Sorts items in array
+            for (int i = 0; i < listBoxLength; i++)
+            {
+                for (int j = i; j < listBoxLength; j++)
+                {
+                    if (time[j] < time[k])
+                    {
+                            k = j;
+                    }
+                }
+                swapHolder = time[i];
+                time[i] = time[k];
+                time[k] = swapHolder;
+            }
+
+            //puts new sorted times in listbox
+            for (int i = 0; i < listBoxLength; i++)
+            {
+                if (checkBox1.Checked)
+                    listBox1.Items.Add(time[i].ToString("HH:mm"));
+                else
+                    listBox1.Items.Add(time[i].ToString("hh:mm tt"));
+            }
         }
 
         /// <summary>
@@ -154,7 +152,7 @@ namespace Project1
                     timeBox.Items.Add(time.ToString("hh:mm tt"));
                 time = time.AddMinutes(30);
             }
-            for (int i = 0; i < listBox1.Items.Count - 1; i++) //TODO
+            for (int i = 0; i < listBox1.Items.Count - 1; i++) //TODO needs fix
             {
                 if (checkBox1.Checked)
                     listBox1.Items[i] = (listBox1.Items[i] as DateTime?).Value.ToString("HH:mm");
