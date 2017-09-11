@@ -16,9 +16,15 @@ namespace Project1
         {
             //TODO:: add a valid timeBox item to listbox
             if (timeBox.SelectedItem == null)
+            {
+                MessageBox.Show("Select a valid time slot.");
                 return;
+            }
             if (listBox1.Items.Contains(timeBox.SelectedItem))
+            {
+                MessageBox.Show("The selected time slot has already been added.");
                 return;
+            }
             listBox1.Items.Add(timeBox.SelectedItem);
             SortListBox();
         }
@@ -36,7 +42,10 @@ namespace Project1
         private void removeButton_Click(object sender, EventArgs e)
         {
             if (listBox1.SelectedItem == null)
+            {
+                MessageBox.Show("Select a time slot to remove from the listbox.");
                 return;
+            }
             listBox1.Items.Remove(listBox1.SelectedItem);
         }
 
@@ -99,21 +108,20 @@ namespace Project1
             timeBox.Items.Clear();
             timeBox.Text = "";
             DateTime time = DateTime.Parse("00:00");
-            if (checkBox1.Checked)
+            for (int i = 0; i < 48; i++)
             {
-                for (int i = 0; i < 48; i++)
-                {
+                if (checkBox1.Checked)
                     timeBox.Items.Add(time.ToString("HH:mm"));
-                    time = time.AddMinutes(30);
-                }
-            }
-            else
-            {
-                for (int i = 0; i < 48; i++)
-                {
+                else
                     timeBox.Items.Add(time.ToString("hh:mm tt"));
-                    time = time.AddMinutes(30);
-                }
+                time = time.AddMinutes(30);
+            }
+            for (int i = 0; i < listBox1.Items.Count - 1; i++) //TODO
+            {
+                if (checkBox1.Checked)
+                    listBox1.Items[i] = (listBox1.Items[i] as DateTime?).Value.ToString("HH:mm");
+                else
+                    listBox1.Items[i] = (listBox1.Items[i] as DateTime?).Value.ToString("hh:mm tt");
             }
         }
     }
