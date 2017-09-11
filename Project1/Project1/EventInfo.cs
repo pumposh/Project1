@@ -25,7 +25,45 @@ namespace Project1
 
         private void SortListBox()
         {
-            //Sort listbox with times
+		int listBoxLength = listBox1.Items.Count;
+		DateTime[] time = new DateTime[listBoxLength - 1];//Array to hold new ordered dateTimes
+
+		//Copies items in listBox1 to an array
+		for(int i=0;i<listBoxLength - 1;i++)
+		{
+			time[i] = (DateTime)listBox1.Items[i];
+		}
+		
+		listBox1.Items.Clear();//clears listbox after all items have been copied
+
+		DateTime swapHolder = time[0];//holds a DateTime for swapping so no data is lost
+		int k = 0;//holds position of lowest DateTime that has not been sorted
+
+		//Sorts items in array
+		for(int i=0;i<listBoxLength - 1;i++)
+		{
+			//currentLowest = time[i];
+			for(int j=i;j<listBoxLength - 1;j++)
+			{
+				if(time[j].Hour < time[k].Minute)
+				{
+					if(time[j].Minute < time[k].Minute)
+					{
+						k = j;
+						//currentLowest = time[j];
+					}
+				}
+			}
+			swapHolder = time[i];
+			time[i] = time[k];
+			time[k] = swapHolder;
+		}
+		
+		//puts new sorted times in listbox
+		for(int i = 0;i<listBoxLength;i++)
+		{
+			listBox1.Items.Add(time[i]);
+		}
         }
 
         private void removeButton_Click(object sender, EventArgs e)
@@ -81,5 +119,7 @@ namespace Project1
                 }
             }
         }
+	
+	
     }
 }
