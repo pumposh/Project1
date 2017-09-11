@@ -45,6 +45,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AvailabilityForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AvailabilityForm.Designer.cs">
+      <DependentUpon>AvailabilityForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="EventInfo.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -59,6 +65,9 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="AvailabilityForm.resx">
+      <DependentUpon>AvailabilityForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="EventInfo.resx">
       <DependentUpon>EventInfo.cs</DependentUpon>
     </EmbeddedResource>
