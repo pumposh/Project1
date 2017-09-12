@@ -6,15 +6,13 @@ namespace Project1
 {
     public partial class EventInfo : Form
     {
-        //TODO:: fill timeBox (a comboBox) with 30 minute intervals of time 
-        public EventInfo()
+        public EventInfo(Form f)
         {
             InitializeComponent();
         }
 
         private void addButton_Click(object sender, EventArgs e)
         {
-            //TODO:: add a valid timeBox item to listbox
             if (timeBox.SelectedItem == null)
             {
                 MessageBox.Show("Select a valid time slot.");
@@ -26,7 +24,6 @@ namespace Project1
                 return;
             }
             listBox1.Items.Add(timeBox.SelectedItem);
-            SortListBox();
         }
 
         private void SortListBox()
@@ -152,12 +149,12 @@ namespace Project1
                     timeBox.Items.Add(time.ToString("hh:mm tt"));
                 time = time.AddMinutes(30);
             }
-            for (int i = 0; i < listBox1.Items.Count - 1; i++) //TODO needs fix
+            for (int i = 0; i < listBox1.Items.Count; i++)
             {
                 if (checkBox1.Checked)
-                    listBox1.Items[i] = (listBox1.Items[i] as DateTime?).Value.ToString("HH:mm");
+                    listBox1.Items[i] = DateTime.Parse(listBox1.Items[i].ToString()).ToString("HH:mm");
                 else
-                    listBox1.Items[i] = (listBox1.Items[i] as DateTime?).Value.ToString("hh:mm tt");
+                    listBox1.Items[i] = DateTime.Parse(listBox1.Items[i].ToString()).ToString("hh:mm tt");
             }
         }
 	

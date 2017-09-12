@@ -19,14 +19,15 @@ namespace Project1
 
 
         /// <summary>
-        /// Ask for event infromation in a new window.
+        /// Ask for event infromation in a new window and updates listbox for available events.
         /// </summary>
         /// <param name="sender">The source of the event.</param>
         /// <param name="e">The <see cref="EventArgs"/> instance containing the event data.</param>
         private void addEventButton_Click(object sender, EventArgs e)
         {
-            EventInfo eventInfo = new EventInfo();
+            EventInfo eventInfo = new EventInfo(this);
             eventInfo.Show();
+            
         }
         /// <summary>
         /// If no listBox item is selected, prompt the user for a listbox selection.
