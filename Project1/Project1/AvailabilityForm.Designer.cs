@@ -161,7 +161,7 @@
             this.Controls.Add(this.eventsBox);
             this.Controls.Add(this.attendeeButton);
             this.Name = "AvailabilityForm";
-            this.Text = "AvailabilityForm";
+            this.Text = "Availability Form";
             this.Load += new System.EventHandler(this.AvailabilityForm_Load_1);
             this.ResumeLayout(false);
             this.PerformLayout();

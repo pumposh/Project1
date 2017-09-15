@@ -125,12 +125,12 @@
             this.checkBox1.UseVisualStyleBackColor = true;
             this.checkBox1.CheckedChanged += new System.EventHandler(this.checkBox1_CheckedChanged);
             // 
-            // timeBox
+            // timesBox
             // 
             this.timesBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.timesBox.FormattingEnabled = true;
             this.timesBox.Location = new System.Drawing.Point(15, 228);
-            this.timesBox.Name = "timeBox";
+            this.timesBox.Name = "timesBox";
             this.timesBox.Size = new System.Drawing.Size(145, 24);
             this.timesBox.TabIndex = 4;
             // 
@@ -179,7 +179,7 @@
             this.Controls.Add(this.label1);
             this.Controls.Add(this.eventNameBox);
             this.Name = "EventInfo";
-            this.Text = "EventInfo";
+            this.Text = "Add Event Form";
             this.Load += new System.EventHandler(this.EventInfo_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
