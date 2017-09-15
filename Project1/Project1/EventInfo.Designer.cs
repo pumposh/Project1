@@ -37,7 +37,7 @@
             this.addButton = new System.Windows.Forms.Button();
             this.removeButton = new System.Windows.Forms.Button();
             this.checkBox1 = new System.Windows.Forms.CheckBox();
-            this.timeBox = new System.Windows.Forms.ComboBox();
+            this.timesBox = new System.Windows.Forms.ComboBox();
             this.addEventButton = new System.Windows.Forms.Button();
             this.label4 = new System.Windows.Forms.Label();
             this.nameBox = new System.Windows.Forms.TextBox();
@@ -45,7 +45,7 @@
             // 
             // eventNameBox
             // 
-            this.eventNameBox.Location = new System.Drawing.Point(107, 34);
+            this.eventNameBox.Location = new System.Drawing.Point(107, 35);
             this.eventNameBox.Name = "eventNameBox";
             this.eventNameBox.Size = new System.Drawing.Size(184, 22);
             this.eventNameBox.TabIndex = 1;
@@ -62,7 +62,7 @@
             // dateTimePicker1
             // 
             this.dateTimePicker1.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dateTimePicker1.Location = new System.Drawing.Point(107, 62);
+            this.dateTimePicker1.Location = new System.Drawing.Point(107, 61);
             this.dateTimePicker1.Name = "dateTimePicker1";
             this.dateTimePicker1.Size = new System.Drawing.Size(132, 22);
             this.dateTimePicker1.TabIndex = 2;
@@ -89,35 +89,35 @@
             // 
             this.listBox1.FormattingEnabled = true;
             this.listBox1.ItemHeight = 16;
-            this.listBox1.Location = new System.Drawing.Point(15, 113);
+            this.listBox1.Location = new System.Drawing.Point(15, 124);
             this.listBox1.Name = "listBox1";
-            this.listBox1.Size = new System.Drawing.Size(276, 116);
+            this.listBox1.Size = new System.Drawing.Size(276, 68);
             this.listBox1.TabIndex = 5;
             // 
             // addButton
             // 
-            this.addButton.Location = new System.Drawing.Point(216, 235);
+            this.addButton.Location = new System.Drawing.Point(166, 227);
             this.addButton.Name = "addButton";
-            this.addButton.Size = new System.Drawing.Size(75, 23);
+            this.addButton.Size = new System.Drawing.Size(125, 24);
             this.addButton.TabIndex = 5;
-            this.addButton.Text = "Add";
+            this.addButton.Text = "Add time slot";
             this.addButton.UseVisualStyleBackColor = true;
             this.addButton.Click += new System.EventHandler(this.addButton_Click);
             // 
             // removeButton
             // 
-            this.removeButton.Location = new System.Drawing.Point(15, 235);
+            this.removeButton.Location = new System.Drawing.Point(76, 198);
             this.removeButton.Name = "removeButton";
-            this.removeButton.Size = new System.Drawing.Size(75, 23);
+            this.removeButton.Size = new System.Drawing.Size(163, 24);
             this.removeButton.TabIndex = 7;
-            this.removeButton.Text = "Remove";
+            this.removeButton.Text = "Clear Times";
             this.removeButton.UseVisualStyleBackColor = true;
             this.removeButton.Click += new System.EventHandler(this.removeButton_Click);
             // 
             // checkBox1
             // 
             this.checkBox1.AutoSize = true;
-            this.checkBox1.Location = new System.Drawing.Point(129, 89);
+            this.checkBox1.Location = new System.Drawing.Point(156, 92);
             this.checkBox1.Name = "checkBox1";
             this.checkBox1.Size = new System.Drawing.Size(118, 21);
             this.checkBox1.TabIndex = 3;
@@ -127,18 +127,18 @@
             // 
             // timeBox
             // 
-            this.timeBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.timeBox.FormattingEnabled = true;
-            this.timeBox.Location = new System.Drawing.Point(96, 238);
-            this.timeBox.Name = "timeBox";
-            this.timeBox.Size = new System.Drawing.Size(114, 24);
-            this.timeBox.TabIndex = 4;
+            this.timesBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.timesBox.FormattingEnabled = true;
+            this.timesBox.Location = new System.Drawing.Point(15, 228);
+            this.timesBox.Name = "timeBox";
+            this.timesBox.Size = new System.Drawing.Size(145, 24);
+            this.timesBox.TabIndex = 4;
             // 
             // addEventButton
             // 
-            this.addEventButton.Location = new System.Drawing.Point(15, 272);
+            this.addEventButton.Location = new System.Drawing.Point(12, 258);
             this.addEventButton.Name = "addEventButton";
-            this.addEventButton.Size = new System.Drawing.Size(102, 23);
+            this.addEventButton.Size = new System.Drawing.Size(133, 24);
             this.addEventButton.TabIndex = 6;
             this.addEventButton.Text = "Add Event";
             this.addEventButton.UseVisualStyleBackColor = true;
@@ -147,7 +147,7 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(12, 9);
+            this.label4.Location = new System.Drawing.Point(12, 8);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(83, 17);
             this.label4.TabIndex = 13;
@@ -155,7 +155,7 @@
             // 
             // nameBox
             // 
-            this.nameBox.Location = new System.Drawing.Point(107, 6);
+            this.nameBox.Location = new System.Drawing.Point(107, 7);
             this.nameBox.Name = "nameBox";
             this.nameBox.Size = new System.Drawing.Size(184, 22);
             this.nameBox.TabIndex = 0;
@@ -164,11 +164,11 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(307, 315);
+            this.ClientSize = new System.Drawing.Size(307, 299);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.nameBox);
             this.Controls.Add(this.addEventButton);
-            this.Controls.Add(this.timeBox);
+            this.Controls.Add(this.timesBox);
             this.Controls.Add(this.checkBox1);
             this.Controls.Add(this.removeButton);
             this.Controls.Add(this.addButton);
@@ -197,7 +197,7 @@
         private System.Windows.Forms.Button addButton;
         private System.Windows.Forms.Button removeButton;
         private System.Windows.Forms.CheckBox checkBox1;
-        private System.Windows.Forms.ComboBox timeBox;
+        private System.Windows.Forms.ComboBox timesBox;
         private System.Windows.Forms.Button addEventButton;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.TextBox nameBox;

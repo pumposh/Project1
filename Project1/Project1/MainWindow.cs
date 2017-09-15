@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -12,14 +13,14 @@ namespace Project1
 {
     public partial class MainWindow : Form
     {
+        internal static List<Event> EventsList = new List<Event>();
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="MainWindow"/> class.
+        /// </summary>
         public MainWindow()
         {
             InitializeComponent();
-        }
-
-        internal void AddEvent(Event ev)
-        {
-            listBox1.Items.Add(ev);
         }
 
         /// <summary>
@@ -41,8 +42,90 @@ namespace Project1
         /// <param name="e">The <see cref="EventArgs"/> instance containing the event data.</param>
         private void availabilityButton_Click(object sender, EventArgs e)
         {
-            AvailabilityForm availabilityForm = new AvailabilityForm();
+            AvailabilityForm availabilityForm = new AvailabilityForm(this);
             availabilityForm.Show();
+        }
+
+        /// <summary>
+        /// Handles the Load event of the MainWindow control.
+        /// </summary>
+        /// <param name="sender">The source of the event.</param>
+        /// <param name="e">The <see cref="EventArgs"/> instance containing the event data.</param>
+        private void MainWindow_Load(object sender, EventArgs e)
+        {
+            using (FileStream fs = new FileStream(Application.StartupPath + "\\record.txt", FileMode.OpenOrCreate))
+            using (StreamReader sr = new StreamReader(fs))
+            {
+                string vline;
+                while ((vline = sr.ReadLine()) != null)
+                {
+                    string[] vitems = vline.Split(new char[] { '\t' }, StringSplitOptions.RemoveEmptyEntries);
+                    if (vitems.Length <= 0)
+                    {
+                        continue;
+                    }
+                    EventsList.Add(Storage.ReadEvent(vitems));
+                }
+            }
+            //push attendee to listview2
+            using (FileStream fs = new FileStream(Application.StartupPath + "\\recordattendee.txt", FileMode.OpenOrCreate))
+            using (StreamReader sr2 = new StreamReader(fs))
+            {
+                string vline2;
+
+                while ((vline2 = sr2.ReadLine()) != null)
+                {
+                    string[] vitems2 = vline2.Split(new char[] { '\t' }, StringSplitOptions.RemoveEmptyEntries);
+                    if (vitems2.Length <= 0)
+                    {
+                        continue;
+                    }
+                    Attendee attendee = Storage.ReadAttendee(vitems2);
+                    EventsList.Find(x => x.ToString() == attendee.ev.ToString()).attendees.Add(attendee);
+                }
+            }
+            ReloadEvents();
+            ReloadAttendees();
+        }
+
+        /// <summary>
+        /// Reloads the attendees.
+        /// </summary>
+        internal void ReloadAttendees()
+        {
+            attendeeView.Items.Clear();
+            foreach (Event ev in EventsList)
+                foreach (Attendee f in ev.attendees)
+                {
+                    ListViewItem item2 = new ListViewItem();
+                    item2.Text = f.ev.name;
+                    item2.SubItems.AddRange(new string[] { f.name, Storage.TimesFormatted(f.availableTimes, checkBox1.Checked) });
+                    attendeeView.Items.Add(item2);
+                }
+        }
+
+        /// <summary>
+        /// Reloads the events.
+        /// </summary>
+        internal void ReloadEvents()
+        {
+            eventView.Items.Clear();
+            if (EventsList.Count > 0)
+            {
+                foreach (Event ev in EventsList)
+                {
+                    ListViewItem item = new ListViewItem();
+                    item.Text = ev.name;
+                    item.SubItems.AddRange(new string[] { ev.host, ev.date.ToString("MM/dd/yyyy"), ev.attendees.Count.ToString(), Storage.TimesFormatted(ev.times, checkBox1.Checked) });
+                    eventView.Items.Add(item);
+                }
+            }
+        }
+
+        private void checkBox1_CheckedChanged(object sender, EventArgs e)
+        {
+            ReloadEvents();
+            ReloadAttendees();
         }
     }
 }

@@ -25,48 +25,44 @@ namespace Project1
         /// <param name="e">The <see cref="EventArgs"/> instance containing the event data.</param>
         private void addButton_Click(object sender, EventArgs e)
         {
-            if (timeBox.SelectedItem == null)
+            if (timesBox.SelectedItem == null)
             {
                 MessageBox.Show("Select a valid time slot.");
                 return;
             }
-            if (listBox1.Items.Contains(timeBox.SelectedItem))
+            if(listBox1.Items.Contains(timesBox.SelectedItem))
             {
-                MessageBox.Show("The selected time slot has already been added.");
+                MessageBox.Show("The selected time has already been added.");
                 return;
             }
 
             if (listBox1.Items.Count == 0)
-                listBox1.Items.Add(timeBox.SelectedItem);
+                listBox1.Items.Add(timesBox.SelectedItem);
             else
                 for (int i = 0; i < listBox1.Items.Count; i++)
                 {
-                    if (DateTime.Parse(listBox1.Items[i].ToString()) > DateTime.Parse(timeBox.SelectedItem.ToString()))
+                    if (DateTime.Parse(listBox1.Items[i].ToString()) > DateTime.Parse(timesBox.SelectedItem.ToString()))
                     {
-                        listBox1.Items.Insert(i, timeBox.SelectedItem);
+                        listBox1.Items.Insert(i, timesBox.SelectedItem);
                         break;
                     }
                     if (i == listBox1.Items.Count - 1) //if it's the maximum element then add to the end
                     {
-                        listBox1.Items.Add(timeBox.SelectedItem);
+                        listBox1.Items.Add(timesBox.SelectedItem);
                         break;
                     }
                 }
+            
         }
 
         /// <summary>
-        /// Removes the selected item from listbox1 if an item is selected.
+        /// Deletes all time slots from the listbox
         /// </summary>
         /// <param name="sender">The source of the event.</param>
         /// <param name="e">The <see cref="EventArgs"/> instance containing the event data.</param>
         private void removeButton_Click(object sender, EventArgs e)
         {
-            if (listBox1.SelectedItem == null)
-            {
-                MessageBox.Show("Select a time slot to remove from the listbox.");
-                return;
-            }
-            listBox1.Items.Remove(listBox1.SelectedItem);
+            listBox1.Items.Clear();
         }
 
         /// <summary>
@@ -98,8 +94,25 @@ namespace Project1
                 return;
             }
 
-            Storage.AddEvent(nameBox.Text, eventNameBox.Text, eventTime.ToString("hh:mm tt"), listBox1.Items);
-           // main.AddEvent()
+            Event ev = new Event(eventNameBox.Text, nameBox.Text, eventTime, TimeSlots());
+            Storage.AddEvent(ev);
+            MainWindow.EventsList.Add(ev);
+            main.ReloadEvents();
+            MessageBox.Show("Successfully added the event.");
+        }
+
+        /// <summary>
+        /// Times the slots.
+        /// </summary>
+        /// <returns></returns>
+        private DateTime[] TimeSlots()
+        {
+            DateTime[] times = new DateTime[listBox1.Items.Count];
+            for (int i = 0; i < listBox1.Items.Count; i++)
+            {
+                times[i] = DateTime.Parse(listBox1.Items[i].ToString());
+            }
+            return times;
         }
 
         /// <summary>
@@ -113,7 +126,7 @@ namespace Project1
             DateTime time = DateTime.Parse("00:00");
             for (int i = 0; i < 48; i++)
             {
-                timeBox.Items.Add(time.ToString("hh:mm tt"));
+                timesBox.Items.Add(time.ToString("hh:mm tt"));
                 time = time.AddMinutes(30);
             }
         }
@@ -125,16 +138,12 @@ namespace Project1
         /// <param name="e">The <see cref="EventArgs"/> instance containing the event data.</param>
         private void checkBox1_CheckedChanged(object sender, EventArgs e)
         {
-            timeBox.Items.Clear();
-            timeBox.Text = "";
-            DateTime time = DateTime.Parse("00:00");
             for (int i = 0; i < 48; i++)
             {
                 if (checkBox1.Checked)
-                    timeBox.Items.Add(time.ToString("HH:mm"));
+                    timesBox.Items[i] = DateTime.Parse(timesBox.Items[i].ToString()).ToString("HH:mm");
                 else
-                    timeBox.Items.Add(time.ToString("hh:mm tt"));
-                time = time.AddMinutes(30);
+                    timesBox.Items[i] = DateTime.Parse(timesBox.Items[i].ToString()).ToString("hh:mm tt");
             }
             for (int i = 0; i < listBox1.Items.Count; i++)
             {
@@ -144,7 +153,5 @@ namespace Project1
                     listBox1.Items[i] = DateTime.Parse(listBox1.Items[i].ToString()).ToString("hh:mm tt");
             }
         }
-	
-	
     }
 }
