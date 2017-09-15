@@ -43,7 +43,7 @@ namespace Project1
         /// <param name="available_times">The available times.</param>
         internal static void AddAttendee(string name, string event_name, ListBox.ObjectCollection available_times)
         {
-
+            
         }
 
         /// <summary>

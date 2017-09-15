@@ -6,11 +6,23 @@ namespace Project1
 {
     public partial class EventInfo : Form
     {
-        public EventInfo(Form f)
+        internal MainWindow main = null;
+
+        /// <summary>
+        /// Passes the MainWindow into this window to allow interaction between the two.
+        /// </summary>
+        /// <param name="m">The MainWindow.</param>
+        public EventInfo(MainWindow m)
         {
             InitializeComponent();
+            main = m;
         }
 
+        /// <summary>
+        /// Adds a selected time from the timeBox to the listBox. The Item is inserted in ascending order.
+        /// </summary>
+        /// <param name="sender">The source of the event.</param>
+        /// <param name="e">The <see cref="EventArgs"/> instance containing the event data.</param>
         private void addButton_Click(object sender, EventArgs e)
         {
             if (timeBox.SelectedItem == null)
@@ -23,48 +35,23 @@ namespace Project1
                 MessageBox.Show("The selected time slot has already been added.");
                 return;
             }
-            listBox1.Items.Add(timeBox.SelectedItem);
-        }
 
-        private void SortListBox()
-        {
-            int listBoxLength = listBox1.Items.Count;
-            DateTime[] time = new DateTime[listBoxLength];//Array to hold new ordered dateTimes
-
-            //Copies items in listBox1 to an array
-            for (int i = 0; i < listBoxLength; i++)
-            {
-                time[i] = DateTime.Parse(listBox1.Items[i].ToString());
-            }
-
-            listBox1.Items.Clear();//clears listbox after all items have been copied
-
-            DateTime swapHolder = time[0];//holds a DateTime for swapping so no data is lost
-            int k = 0;//holds position of lowest DateTime that has not been sorted
-
-            //Sorts items in array
-            for (int i = 0; i < listBoxLength; i++)
-            {
-                for (int j = i; j < listBoxLength; j++)
+            if (listBox1.Items.Count == 0)
+                listBox1.Items.Add(timeBox.SelectedItem);
+            else
+                for (int i = 0; i < listBox1.Items.Count; i++)
                 {
-                    if (time[j] < time[k])
+                    if (DateTime.Parse(listBox1.Items[i].ToString()) > DateTime.Parse(timeBox.SelectedItem.ToString()))
                     {
-                            k = j;
+                        listBox1.Items.Insert(i, timeBox.SelectedItem);
+                        break;
+                    }
+                    if (i == listBox1.Items.Count - 1) //if it's the maximum element then add to the end
+                    {
+                        listBox1.Items.Add(timeBox.SelectedItem);
+                        break;
                     }
                 }
-                swapHolder = time[i];
-                time[i] = time[k];
-                time[k] = swapHolder;
-            }
-
-            //puts new sorted times in listbox
-            for (int i = 0; i < listBoxLength; i++)
-            {
-                if (checkBox1.Checked)
-                    listBox1.Items.Add(time[i].ToString("HH:mm"));
-                else
-                    listBox1.Items.Add(time[i].ToString("hh:mm tt"));
-            }
         }
 
         /// <summary>
@@ -110,8 +97,9 @@ namespace Project1
                 MessageBox.Show("Enter your event times.");
                 return;
             }
-            Storage.AddEvent(nameBox.Text, eventNameBox.Text, eventTime, listBox1.Items);
-            //TODO:: save information into a file
+
+            Storage.AddEvent(nameBox.Text, eventNameBox.Text, eventTime.ToString("hh:mm tt"), listBox1.Items);
+           // main.AddEvent()
         }
 
         /// <summary>
@@ -137,7 +125,6 @@ namespace Project1
         /// <param name="e">The <see cref="EventArgs"/> instance containing the event data.</param>
         private void checkBox1_CheckedChanged(object sender, EventArgs e)
         {
-            //TODO:: change combobox and listbox format
             timeBox.Items.Clear();
             timeBox.Text = "";
             DateTime time = DateTime.Parse("00:00");

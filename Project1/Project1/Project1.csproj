@@ -45,12 +45,14 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Attendee.cs" />
     <Compile Include="AvailabilityForm.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="AvailabilityForm.Designer.cs">
       <DependentUpon>AvailabilityForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="Event.cs" />
     <Compile Include="EventInfo.cs">
       <SubType>Form</SubType>
     </Compile>

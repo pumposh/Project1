@@ -17,6 +17,10 @@ namespace Project1
             InitializeComponent();
         }
 
+        internal void AddEvent(Event ev)
+        {
+            listBox1.Items.Add(ev);
+        }
 
         /// <summary>
         /// Ask for event infromation in a new window and updates listbox for available events.
