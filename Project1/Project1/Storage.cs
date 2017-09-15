@@ -12,7 +12,7 @@ namespace Project1
         /// <param name="user_name">user name</param>
         /// <param name="event_name">event name</param>
         /// <param name="eventTime">The event time.</param>
-        internal static void AddEvent(string user_name, string event_name, String eventTime, ListBox.ObjectCollection available_times)
+        internal static void AddEvent(string user_name, string event_name, String eventTime, String eventstarttime ,String eventendtime)
         {
             //Write a value to the specified path
             try
@@ -22,11 +22,36 @@ namespace Project1
                 //Create a writer
                 StreamWriter writer = new StreamWriter(iOflow);
                 //Writes the specified content to the file
-                writer.WriteLine("nameBox:" + user_name + "\teventNameBox:" + event_name + "\teventTime:" + eventTime);
+                //writer.WriteLine("nameBox:" + user_name + "\teventNameBox:" + event_name + "\teventTime:" + eventTime);
+                writer.WriteLine(user_name + "\t" + event_name + "\t" + eventTime + "\t" + eventstarttime + "\t" + eventendtime+"\t\n");
                 //Close the writer
                 writer.Close();
                 //Close the file stream
                 iOflow.Close();
+
+            }
+            catch (Exception)
+            {
+            }
+
+        }
+        internal static void AddAttendee(string AddAttendee_name, string event_name, string available_times)
+        {
+            //Write a value to the specified path
+            try
+            {
+                //Create IO stream
+                FileStream iOflow = new FileStream(Environment.CurrentDirectory + "\\recordattendee.txt", FileMode.Append);
+                //Create a writer
+                StreamWriter writer = new StreamWriter(iOflow);
+                //Writes the specified content to the file
+                //writer.WriteLine("nameBox:" + user_name + "\teventNameBox:" + event_name + "\teventTime:" + eventTime);
+                writer.WriteLine(AddAttendee_name + "\t" + event_name + "\t" + available_times + "\t\n");
+                //Close the writer
+                writer.Close();
+                //Close the file stream
+                iOflow.Close();
+
             }
             catch (Exception)
             {

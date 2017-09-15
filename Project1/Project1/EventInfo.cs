@@ -10,7 +10,7 @@ namespace Project1
         {
             InitializeComponent();
         }
-
+        //add the starttime
         private void addButton_Click(object sender, EventArgs e)
         {
             if (timeBox.SelectedItem == null)
@@ -18,12 +18,43 @@ namespace Project1
                 MessageBox.Show("Select a valid time slot.");
                 return;
             }
-            if (listBox1.Items.Contains(timeBox.SelectedItem))
+            if (listBox1.Items.Count>=1)
             {
-                MessageBox.Show("The selected time slot has already been added.");
+                MessageBox.Show("You have added the start time ");
                 return;
             }
             listBox1.Items.Add(timeBox.SelectedItem);
+        }
+        //add the endtime
+        private void button1_Click(object sender, EventArgs e)
+        {
+            if (listBox1.Items == null)
+            {
+                MessageBox.Show("please add the start time at first");
+                return;
+ 
+            }
+            if (comboBox1.SelectedItem == null)
+            {
+                MessageBox.Show("Select a valid time slot.");
+                return;
+            }
+
+            if (listBox1.Items.Count >= 2)
+            {
+                MessageBox.Show("You have added the end time ");
+                return;
+            }
+            DateTime[] time = new DateTime[2];
+            time[0] = DateTime.Parse(timeBox.SelectedItem.ToString());
+            time[1] = DateTime.Parse(comboBox1.SelectedItem.ToString());
+
+            if (time[0] >=time[1])
+            {
+                MessageBox.Show("Endtime must be later than Starttime");
+                return;
+            }
+            listBox1.Items.Add(comboBox1.SelectedItem);
         }
 
         private void SortListBox()
@@ -74,12 +105,8 @@ namespace Project1
         /// <param name="e">The <see cref="EventArgs"/> instance containing the event data.</param>
         private void removeButton_Click(object sender, EventArgs e)
         {
-            if (listBox1.SelectedItem == null)
-            {
-                MessageBox.Show("Select a time slot to remove from the listbox.");
-                return;
-            }
-            listBox1.Items.Remove(listBox1.SelectedItem);
+
+            listBox1.Items.Clear();
         }
 
         /// <summary>
@@ -110,8 +137,15 @@ namespace Project1
                 MessageBox.Show("Enter your event times.");
                 return;
             }
-            Storage.AddEvent(nameBox.Text, eventNameBox.Text, eventTime, listBox1.Items);
+            String a = Convert.ToString(eventTime);
+            Storage.AddEvent(nameBox.Text, eventNameBox.Text, a, timeBox.SelectedItem .ToString (), comboBox1.SelectedItem.ToString());
+            Storage.AddAttendee(nameBox.Text, eventNameBox.Text, timeBox.SelectedItem.ToString() + "-to-" + comboBox1.SelectedItem.ToString());
+            MessageBox.Show("successfully added");
+
+            
             //TODO:: save information into a file
+            // flush the gridlist
+         
         }
 
         /// <summary>
@@ -126,6 +160,7 @@ namespace Project1
             for (int i = 0; i < 48; i++)
             {
                 timeBox.Items.Add(time.ToString("hh:mm tt"));
+                comboBox1.Items.Add(time.ToString("hh:mm tt"));
                 time = time.AddMinutes(30);
             }
         }
@@ -139,14 +174,22 @@ namespace Project1
         {
             //TODO:: change combobox and listbox format
             timeBox.Items.Clear();
+            comboBox1.Items.Clear();
             timeBox.Text = "";
+            comboBox1.Text = "";
             DateTime time = DateTime.Parse("00:00");
             for (int i = 0; i < 48; i++)
             {
                 if (checkBox1.Checked)
+                {
                     timeBox.Items.Add(time.ToString("HH:mm"));
+                    comboBox1.Items.Add(time.ToString("HH:mm"));
+                }
                 else
+                {
                     timeBox.Items.Add(time.ToString("hh:mm tt"));
+                    comboBox1.Items.Add(time.ToString("hh:mm tt"));
+                }
                 time = time.AddMinutes(30);
             }
             for (int i = 0; i < listBox1.Items.Count; i++)
@@ -157,6 +200,13 @@ namespace Project1
                     listBox1.Items[i] = DateTime.Parse(listBox1.Items[i].ToString()).ToString("hh:mm tt");
             }
         }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+
 	
 	
     }
