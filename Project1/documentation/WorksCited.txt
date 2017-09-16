@@ -1,0 +1,2 @@
+We used VisualStudio's GUI builder.
+Code reference: https://msdn.microsoft.com/en-us/library/aa288436(v=vs.71).aspx
