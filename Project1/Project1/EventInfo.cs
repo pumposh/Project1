@@ -1,11 +1,13 @@
 ﻿using System;
 using System.Windows.Forms;
-using System.Linq;
 
 namespace Project1
 {
     public partial class EventInfo : Form
     {
+        /// <summary>
+        /// The main
+        /// </summary>
         internal MainWindow main = null;
 
         /// <summary>
@@ -22,7 +24,7 @@ namespace Project1
         /// Adds a selected time from the timeBox to the listBox. The Item is inserted in ascending order.
         /// </summary>
         /// <param name="sender">The source of the event.</param>
-        /// <param name="e">The <see cref="EventArgs"/> instance containing the event data.</param>
+        /// <param name="e">The <see cref="EventArgs" /> instance containing the event data.</param>
         private void addButton_Click(object sender, EventArgs e)
         {
             if (timesBox.SelectedItem == null)
@@ -59,7 +61,7 @@ namespace Project1
         /// Deletes all time slots from the listbox
         /// </summary>
         /// <param name="sender">The source of the event.</param>
-        /// <param name="e">The <see cref="EventArgs"/> instance containing the event data.</param>
+        /// <param name="e">The <see cref="EventArgs" /> instance containing the event data.</param>
         private void removeButton_Click(object sender, EventArgs e)
         {
             listBox1.Items.Clear();
@@ -69,7 +71,7 @@ namespace Project1
         /// Saves event information to a file and checks for correctness.
         /// </summary>
         /// <param name="sender">The source of the event.</param>
-        /// <param name="e">The <see cref="EventArgs"/> instance containing the event data.</param>
+        /// <param name="e">The <see cref="EventArgs" /> instance containing the event data.</param>
         private void addEventButton_Click(object sender, EventArgs e)
         {
             if (nameBox.Text == String.Empty)
@@ -124,7 +126,7 @@ namespace Project1
         /// Adds time slots into combobox for selection in 12 hr format and prevents user from picking an earlier date than today.
         /// </summary>
         /// <param name="sender">The source of the event.</param>
-        /// <param name="e">The <see cref="EventArgs"/> instance containing the event data.</param>
+        /// <param name="e">The <see cref="EventArgs" /> instance containing the event data.</param>
         private void EventInfo_Load(object sender, EventArgs e)
         {
             dateTimePicker1.MinDate = DateTime.Today;
@@ -140,7 +142,7 @@ namespace Project1
         /// Changes time format between 24 hr and 12 hr format for combobox and listbox.
         /// </summary>
         /// <param name="sender">The source of the event.</param>
-        /// <param name="e">The <see cref="EventArgs"/> instance containing the event data.</param>
+        /// <param name="e">The <see cref="EventArgs" /> instance containing the event data.</param>
         private void checkBox1_CheckedChanged(object sender, EventArgs e)
         {
             for (int i = 0; i < 48; i++)

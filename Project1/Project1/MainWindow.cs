@@ -1,22 +1,19 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
 using System.IO;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace Project1
 {
     public partial class MainWindow : Form
     {
+        /// <summary>
+        /// The events list
+        /// </summary>
         internal static List<Event> EventsList = new List<Event>();
 
         /// <summary>
-        /// Initializes a new instance of the <see cref="MainWindow"/> class.
+        /// Initializes a new instance of the <see cref="MainWindow" /> class.
         /// </summary>
         public MainWindow()
         {
@@ -27,7 +24,7 @@ namespace Project1
         /// Ask for event infromation in a new window and updates listbox for available events.
         /// </summary>
         /// <param name="sender">The source of the event.</param>
-        /// <param name="e">The <see cref="EventArgs"/> instance containing the event data.</param>
+        /// <param name="e">The <see cref="EventArgs" /> instance containing the event data.</param>
         private void addEventButton_Click(object sender, EventArgs e)
         {
             EventInfo eventInfo = new EventInfo(this);
@@ -39,7 +36,7 @@ namespace Project1
         /// From that listbox selection, prompt the user for available dates for the selected event in a new window.
         /// </summary>
         /// <param name="sender">The source of the event.</param>
-        /// <param name="e">The <see cref="EventArgs"/> instance containing the event data.</param>
+        /// <param name="e">The <see cref="EventArgs" /> instance containing the event data.</param>
         private void availabilityButton_Click(object sender, EventArgs e)
         {
             AvailabilityForm availabilityForm = new AvailabilityForm(this);
@@ -50,7 +47,7 @@ namespace Project1
         /// Handles the Load event of the MainWindow control.
         /// </summary>
         /// <param name="sender">The source of the event.</param>
-        /// <param name="e">The <see cref="EventArgs"/> instance containing the event data.</param>
+        /// <param name="e">The <see cref="EventArgs" /> instance containing the event data.</param>
         private void MainWindow_Load(object sender, EventArgs e)
         {
             using (FileStream fs = new FileStream(Application.StartupPath + "\\record.txt", FileMode.OpenOrCreate))
@@ -122,6 +119,11 @@ namespace Project1
             }
         }
 
+        /// <summary>
+        /// Handles the CheckedChanged event of the checkBox1 control.
+        /// </summary>
+        /// <param name="sender">The source of the event.</param>
+        /// <param name="e">The <see cref="EventArgs"/> instance containing the event data.</param>
         private void checkBox1_CheckedChanged(object sender, EventArgs e)
         {
             ReloadEvents();

@@ -5,10 +5,13 @@ namespace Project1
 {
     public partial class AvailabilityForm : Form
     {
+        /// <summary>
+        /// The main
+        /// </summary>
         MainWindow main;
 
         /// <summary>
-        /// Initializes a new instance of the <see cref="AvailabilityForm"/> class.
+        /// Initializes a new instance of the <see cref="AvailabilityForm" /> class.
         /// </summary>
         /// <param name="m">The m.</param>
         public AvailabilityForm(MainWindow m)
@@ -21,7 +24,7 @@ namespace Project1
         /// Handles the 1 event of the AvailabilityForm_Load control.
         /// </summary>
         /// <param name="sender">The source of the event.</param>
-        /// <param name="e">The <see cref="EventArgs"/> instance containing the event data.</param>
+        /// <param name="e">The <see cref="EventArgs" /> instance containing the event data.</param>
         private void AvailabilityForm_Load_1(object sender, EventArgs e)
         {
             MainWindow.EventsList.ForEach((Event ev) =>
@@ -34,7 +37,7 @@ namespace Project1
         /// Handles the CheckedChanged event of the checkBox1 control.
         /// </summary>
         /// <param name="sender">The source of the event.</param>
-        /// <param name="e">The <see cref="EventArgs"/> instance containing the event data.</param>
+        /// <param name="e">The <see cref="EventArgs" /> instance containing the event data.</param>
         private void checkBox1_CheckedChanged(object sender, EventArgs e)
         { 
             for (int i = 0; i < timesBox.Items.Count; i++)
@@ -53,6 +56,11 @@ namespace Project1
             }
         }
 
+        /// <summary>
+        /// Handles the Click event of the addButton control.
+        /// </summary>
+        /// <param name="sender">The source of the event.</param>
+        /// <param name="e">The <see cref="EventArgs"/> instance containing the event data.</param>
         private void addButton_Click(object sender, EventArgs e)
         {
             if(timesBox.SelectedItem == null)
@@ -73,7 +81,7 @@ namespace Project1
         /// Handles the SelectedIndexChanged event of the eventsBox control.
         /// </summary>
         /// <param name="sender">The source of the event.</param>
-        /// <param name="e">The <see cref="EventArgs"/> instance containing the event data.</param>
+        /// <param name="e">The <see cref="EventArgs" /> instance containing the event data.</param>
         private void eventsBox_SelectedIndexChanged(object sender, EventArgs e)
         {
             if (eventsBox.SelectedItem == null)
@@ -90,7 +98,7 @@ namespace Project1
         /// Handles the Click event of the attendeeButton control.
         /// </summary>
         /// <param name="sender">The source of the event.</param>
-        /// <param name="e">The <see cref="EventArgs"/> instance containing the event data.</param>
+        /// <param name="e">The <see cref="EventArgs" /> instance containing the event data.</param>
         private void attendeeButton_Click(object sender, EventArgs e)
         {
             if(nameBox.Text == string.Empty)
@@ -141,7 +149,7 @@ namespace Project1
         /// Handles the Click event of the clearButton control.
         /// </summary>
         /// <param name="sender">The source of the event.</param>
-        /// <param name="e">The <see cref="EventArgs"/> instance containing the event data.</param>
+        /// <param name="e">The <see cref="EventArgs" /> instance containing the event data.</param>
         private void clearButton_Click(object sender, EventArgs e)
         {
             listBox1.Items.Clear();

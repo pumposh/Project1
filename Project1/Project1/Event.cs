@@ -5,14 +5,41 @@ namespace Project1
 {
     public class Event
     {
+        /// <summary>
+        /// Gets the name.
+        /// </summary>
+        /// <value>
+        /// The name.
+        /// </value>
         public String name { get; private set; }
+        /// <summary>
+        /// Gets the host.
+        /// </summary>
+        /// <value>
+        /// The host.
+        /// </value>
         public String host { get; private set; }
+        /// <summary>
+        /// Gets the date.
+        /// </summary>
+        /// <value>
+        /// The date.
+        /// </value>
         public DateTime date { get; private set; }
+        /// <summary>
+        /// Gets the times.
+        /// </summary>
+        /// <value>
+        /// The times.
+        /// </value>
         public DateTime[] times { get; private set; }
+        /// <summary>
+        /// The attendees
+        /// </summary>
         public List<Attendee> attendees = new List<Attendee>();
 
         /// <summary>
-        /// Initializes a new instance of the <see cref="Event"/> class.
+        /// Initializes a new instance of the <see cref="Event" /> class.
         /// </summary>
         /// <param name="Host">The host.</param>
         /// <param name="Name">The name.</param>

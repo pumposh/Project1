@@ -1,13 +1,12 @@
 ﻿using System;
 using System.IO;
-using System.Windows.Forms;
 
 namespace Project1
 {
     internal class Storage
     {
         /// <summary>
-        /// Timeses the formatted.
+        /// Formats a DateTime array into a string
         /// </summary>
         /// <param name="times">The times.</param>
         /// <param name="mode24">if set to <c>true</c> [mode24].</param>
@@ -54,9 +53,7 @@ namespace Project1
         /// Adds Event to file.
         /// Output Format: user_name    event_name  event_time  [times available] separated by a ,
         /// </summary>
-        /// <param name="user_name">user name</param>
-        /// <param name="event_name">event name</param>
-        /// <param name="eventTime">The event time.</param>
+        /// <param name="ev">The ev.</param>
         internal static void AddEvent(Event ev)
         {
             //Write a value to the specified path
@@ -76,9 +73,7 @@ namespace Project1
         /// Adds the attendee to file.
         /// Format: attendeeName    eventName   [times]
         /// </summary>
-        /// <param name="name">Name of the attendee.</param>
-        /// <param name="ev">The event.</param>
-        /// <param name="availableTimes">The available times.</param>
+        /// <param name="attendee">The attendee.</param>
         internal static void AddAttendee(Attendee attendee)
         {
             //Write a value to the specified path
@@ -97,7 +92,7 @@ namespace Project1
 
 
         /// <summary>
-        /// Reads attendee from a string array 
+        /// Reads attendee from a string array
         /// </summary>
         /// <param name="items">The items.</param>
         /// <returns></returns>
