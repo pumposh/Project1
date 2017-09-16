@@ -111,6 +111,11 @@ namespace Project1
 
             Event ev = MainWindow.EventsList.Find(x => x.ToString() == (eventsBox.SelectedItem as Event).ToString());
             Attendee attendee = new Attendee(nameBox.Text, ev, TimeSlots());
+            if(ev.attendees.Find(x => x.name == attendee.name)!= null)
+            {
+                MessageBox.Show(attendee.name + " is already attending event " + ev.name+".");
+                return;
+            }
             MainWindow.EventsList.Find(x => x == ev).attendees.Add(attendee);
             Storage.AddAttendee(attendee);
             main.ReloadAttendees();

@@ -103,7 +103,7 @@
             this.checkBox1.UseVisualStyleBackColor = true;
             this.checkBox1.CheckedChanged += new System.EventHandler(this.checkBox1_CheckedChanged);
             // 
-            // listView1
+            // eventView
             // 
             this.eventView.AllowDrop = true;
             this.eventView.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
@@ -115,7 +115,7 @@
             this.eventView.FullRowSelect = true;
             this.eventView.GridLines = true;
             this.eventView.Location = new System.Drawing.Point(15, 16);
-            this.eventView.Name = "listView1";
+            this.eventView.Name = "eventView";
             this.eventView.Size = new System.Drawing.Size(1077, 209);
             this.eventView.TabIndex = 6;
             this.eventView.UseCompatibleStateImageBehavior = false;
@@ -157,7 +157,7 @@
             this.Controls.Add(this.availabilityButton);
             this.Controls.Add(this.addEventButton);
             this.Name = "MainWindow";
-            this.Text = "Form1";
+            this.Text = "Main Window";
             this.Load += new System.EventHandler(this.MainWindow_Load);
             this.ResumeLayout(false);
             this.PerformLayout();

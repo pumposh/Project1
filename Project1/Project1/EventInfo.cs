@@ -94,7 +94,12 @@ namespace Project1
                 return;
             }
 
-            Event ev = new Event(eventNameBox.Text, nameBox.Text, eventTime, TimeSlots());
+            Event ev = new Event(nameBox.Text, eventNameBox.Text, eventTime, TimeSlots());
+            if(MainWindow.EventsList.Find(x=> x.ToString() == ev.ToString()) != null)
+            {
+                MessageBox.Show("This event has already been scheduled.");
+                return;
+            }
             Storage.AddEvent(ev);
             MainWindow.EventsList.Add(ev);
             main.ReloadEvents();
