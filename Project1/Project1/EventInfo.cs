@@ -3,6 +3,10 @@ using System.Windows.Forms;
 
 namespace Project1
 {
+    /// <summary>
+    /// The event creation form
+    /// </summary>
+    /// <seealso cref="System.Windows.Forms.Form" />
     public partial class EventInfo : Form
     {
         /// <summary>

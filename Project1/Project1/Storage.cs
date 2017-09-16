@@ -3,6 +3,9 @@ using System.IO;
 
 namespace Project1
 {
+    /// <summary>
+    /// Class for helping with file storage/reading
+    /// </summary>
     internal class Storage
     {
         /// <summary>

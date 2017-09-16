@@ -3,6 +3,9 @@ using System.Collections.Generic;
 
 namespace Project1
 {
+    /// <summary>
+    /// Event class
+    /// </summary>
     public class Event
     {
         /// <summary>

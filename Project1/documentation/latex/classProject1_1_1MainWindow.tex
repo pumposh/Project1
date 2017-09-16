@@ -1,0 +1,325 @@
+\hypertarget{classProject1_1_1MainWindow}{}\section{Project1.\+Main\+Window Class Reference}
+\label{classProject1_1_1MainWindow}\index{Project1.\+Main\+Window@{Project1.\+Main\+Window}}
+
+
+The Main Window form  
+
+
+Inheritance diagram for Project1.\+Main\+Window\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classProject1_1_1MainWindow}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classProject1_1_1MainWindow_ac8ada21cf001233b859c3c8fd34dbd14}{Main\+Window} ()
+\begin{DoxyCompactList}\small\item\em Initializes a new instance of the \hyperlink{classProject1_1_1MainWindow}{Main\+Window} class. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+override void \hyperlink{classProject1_1_1MainWindow_a6a752bcb31d44385e4f21b1e75861615}{Dispose} (bool disposing)
+\begin{DoxyCompactList}\small\item\em Clean up any resources being used. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Package Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{classProject1_1_1MainWindow_af3d1ecd028cb95773e1c1eec3a28e7ce}{Reload\+Attendees} ()
+\begin{DoxyCompactList}\small\item\em Reloads the attendees. \end{DoxyCompactList}\item 
+void \hyperlink{classProject1_1_1MainWindow_aef6b435caef02f80d3f3752684cf00f6}{Reload\+Events} ()
+\begin{DoxyCompactList}\small\item\em Reloads the events. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Static Package Attributes}
+\begin{DoxyCompactItemize}
+\item 
+static List$<$ \hyperlink{classProject1_1_1Event}{Event} $>$ \hyperlink{classProject1_1_1MainWindow_ae3afd09951104ecaa17ed586dd934249}{Events\+List} = new List$<$\hyperlink{classProject1_1_1Event}{Event}$>$()
+\begin{DoxyCompactList}\small\item\em The events list \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{classProject1_1_1MainWindow_acddeca5d53ed4be2a81351d1681b4cb5}{add\+Event\+Button\+\_\+\+Click} (object sender, Event\+Args e)
+\begin{DoxyCompactList}\small\item\em Ask for event infromation in a new window and updates listbox for available events. \end{DoxyCompactList}\item 
+void \hyperlink{classProject1_1_1MainWindow_a70b3092e895f756ceda7a95309581fe5}{availability\+Button\+\_\+\+Click} (object sender, Event\+Args e)
+\begin{DoxyCompactList}\small\item\em If no list\+Box item is selected, prompt the user for a listbox selection. From that listbox selection, prompt the user for available dates for the selected event in a new window. \end{DoxyCompactList}\item 
+void \hyperlink{classProject1_1_1MainWindow_a31c174049fa92aa29587cf81f7749bd3}{Main\+Window\+\_\+\+Load} (object sender, Event\+Args e)
+\begin{DoxyCompactList}\small\item\em Handles the Load event of the \hyperlink{classProject1_1_1MainWindow}{Main\+Window} control. \end{DoxyCompactList}\item 
+void \hyperlink{classProject1_1_1MainWindow_a9204f8ca23668b22fa23b4fa44b3ae67}{check\+Box1\+\_\+\+Checked\+Changed} (object sender, Event\+Args e)
+\begin{DoxyCompactList}\small\item\em Handles the Checked\+Changed event of the check\+Box1 control. \end{DoxyCompactList}\item 
+void \hyperlink{classProject1_1_1MainWindow_a3062c1009a2a7a443176cf874520eebe}{Initialize\+Component} ()
+\begin{DoxyCompactList}\small\item\em Required method for Designer support -\/ do not modify the contents of this method with the code editor. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+System.\+Component\+Model.\+I\+Container \hyperlink{classProject1_1_1MainWindow_ab73af7a7685fb735923099a87cc5c81a}{components} = null
+\begin{DoxyCompactList}\small\item\em Required designer variable. \end{DoxyCompactList}\item 
+System.\+Windows.\+Forms.\+Button \hyperlink{classProject1_1_1MainWindow_a3d99b09991f5611424ec9886d8805fce}{add\+Event\+Button}
+\item 
+System.\+Windows.\+Forms.\+Button \hyperlink{classProject1_1_1MainWindow_a3e34c89029ddf939d607ea8638e444c8}{availability\+Button}
+\item 
+System.\+Windows.\+Forms.\+List\+View \hyperlink{classProject1_1_1MainWindow_a87e159953fb2bc0cb9276dc85f2e7979}{attendee\+View}
+\item 
+System.\+Windows.\+Forms.\+Column\+Header \hyperlink{classProject1_1_1MainWindow_a2814c0939a2ecfdcb2506f83fcfff080}{column\+Header3}
+\item 
+System.\+Windows.\+Forms.\+Column\+Header \hyperlink{classProject1_1_1MainWindow_acaaac5d2776ef69f8e9abbb61b06ee64}{column\+Header7}
+\item 
+System.\+Windows.\+Forms.\+Column\+Header \hyperlink{classProject1_1_1MainWindow_aaed23b23d4df062fe99afdee1730e800}{column\+Header11}
+\item 
+System.\+Windows.\+Forms.\+Check\+Box \hyperlink{classProject1_1_1MainWindow_a2e6cf3cf871c168672d16d8c12211047}{check\+Box1}
+\item 
+System.\+Windows.\+Forms.\+List\+View \hyperlink{classProject1_1_1MainWindow_a48288e76cf64892256e3ec2f3173bcb8}{event\+View}
+\item 
+System.\+Windows.\+Forms.\+Column\+Header \hyperlink{classProject1_1_1MainWindow_a8cc8ae19b57ec667fa7cc09ed7446056}{column\+Header5}
+\item 
+System.\+Windows.\+Forms.\+Column\+Header \hyperlink{classProject1_1_1MainWindow_a5041ff81bbef58fc72cb0914afa984ea}{column\+Header6}
+\item 
+System.\+Windows.\+Forms.\+Column\+Header \hyperlink{classProject1_1_1MainWindow_ac624f584eb3fbe129389e2b3e287f596}{column\+Header10}
+\item 
+System.\+Windows.\+Forms.\+Column\+Header \hyperlink{classProject1_1_1MainWindow_a7ad81e39a25ae4972c28b1d805b827a9}{column\+Header12}
+\item 
+System.\+Windows.\+Forms.\+Column\+Header \hyperlink{classProject1_1_1MainWindow_ab661e6cae54e37f16fed3117b6b038e6}{column\+Header13}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+The Main Window form 
+
+\begin{DoxySeeAlso}{See also}
+System.\+Windows.\+Forms.\+Form
+
+
+\end{DoxySeeAlso}
+
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classProject1_1_1MainWindow_ac8ada21cf001233b859c3c8fd34dbd14}\label{classProject1_1_1MainWindow_ac8ada21cf001233b859c3c8fd34dbd14}} 
+\index{Project1\+::\+Main\+Window@{Project1\+::\+Main\+Window}!Main\+Window@{Main\+Window}}
+\index{Main\+Window@{Main\+Window}!Project1\+::\+Main\+Window@{Project1\+::\+Main\+Window}}
+\subsubsection{\texorpdfstring{Main\+Window()}{MainWindow()}}
+{\footnotesize\ttfamily Project1.\+Main\+Window.\+Main\+Window (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Initializes a new instance of the \hyperlink{classProject1_1_1MainWindow}{Main\+Window} class. 
+
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{classProject1_1_1MainWindow_acddeca5d53ed4be2a81351d1681b4cb5}\label{classProject1_1_1MainWindow_acddeca5d53ed4be2a81351d1681b4cb5}} 
+\index{Project1\+::\+Main\+Window@{Project1\+::\+Main\+Window}!add\+Event\+Button\+\_\+\+Click@{add\+Event\+Button\+\_\+\+Click}}
+\index{add\+Event\+Button\+\_\+\+Click@{add\+Event\+Button\+\_\+\+Click}!Project1\+::\+Main\+Window@{Project1\+::\+Main\+Window}}
+\subsubsection{\texorpdfstring{add\+Event\+Button\+\_\+\+Click()}{addEventButton\_Click()}}
+{\footnotesize\ttfamily void Project1.\+Main\+Window.\+add\+Event\+Button\+\_\+\+Click (\begin{DoxyParamCaption}\item[{object}]{sender,  }\item[{Event\+Args}]{e }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [private]}}
+
+
+
+Ask for event infromation in a new window and updates listbox for available events. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em sender} & The source of the event.\\
+\hline
+{\em e} & The Event\+Args instance containing the event data.\\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classProject1_1_1MainWindow_a70b3092e895f756ceda7a95309581fe5}\label{classProject1_1_1MainWindow_a70b3092e895f756ceda7a95309581fe5}} 
+\index{Project1\+::\+Main\+Window@{Project1\+::\+Main\+Window}!availability\+Button\+\_\+\+Click@{availability\+Button\+\_\+\+Click}}
+\index{availability\+Button\+\_\+\+Click@{availability\+Button\+\_\+\+Click}!Project1\+::\+Main\+Window@{Project1\+::\+Main\+Window}}
+\subsubsection{\texorpdfstring{availability\+Button\+\_\+\+Click()}{availabilityButton\_Click()}}
+{\footnotesize\ttfamily void Project1.\+Main\+Window.\+availability\+Button\+\_\+\+Click (\begin{DoxyParamCaption}\item[{object}]{sender,  }\item[{Event\+Args}]{e }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [private]}}
+
+
+
+If no list\+Box item is selected, prompt the user for a listbox selection. From that listbox selection, prompt the user for available dates for the selected event in a new window. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em sender} & The source of the event.\\
+\hline
+{\em e} & The Event\+Args instance containing the event data.\\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classProject1_1_1MainWindow_a9204f8ca23668b22fa23b4fa44b3ae67}\label{classProject1_1_1MainWindow_a9204f8ca23668b22fa23b4fa44b3ae67}} 
+\index{Project1\+::\+Main\+Window@{Project1\+::\+Main\+Window}!check\+Box1\+\_\+\+Checked\+Changed@{check\+Box1\+\_\+\+Checked\+Changed}}
+\index{check\+Box1\+\_\+\+Checked\+Changed@{check\+Box1\+\_\+\+Checked\+Changed}!Project1\+::\+Main\+Window@{Project1\+::\+Main\+Window}}
+\subsubsection{\texorpdfstring{check\+Box1\+\_\+\+Checked\+Changed()}{checkBox1\_CheckedChanged()}}
+{\footnotesize\ttfamily void Project1.\+Main\+Window.\+check\+Box1\+\_\+\+Checked\+Changed (\begin{DoxyParamCaption}\item[{object}]{sender,  }\item[{Event\+Args}]{e }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [private]}}
+
+
+
+Handles the Checked\+Changed event of the check\+Box1 control. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em sender} & The source of the event.\\
+\hline
+{\em e} & The Event\+Args instance containing the event data.\\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classProject1_1_1MainWindow_a6a752bcb31d44385e4f21b1e75861615}\label{classProject1_1_1MainWindow_a6a752bcb31d44385e4f21b1e75861615}} 
+\index{Project1\+::\+Main\+Window@{Project1\+::\+Main\+Window}!Dispose@{Dispose}}
+\index{Dispose@{Dispose}!Project1\+::\+Main\+Window@{Project1\+::\+Main\+Window}}
+\subsubsection{\texorpdfstring{Dispose()}{Dispose()}}
+{\footnotesize\ttfamily override void Project1.\+Main\+Window.\+Dispose (\begin{DoxyParamCaption}\item[{bool}]{disposing }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [protected]}}
+
+
+
+Clean up any resources being used. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em disposing} & true if managed resources should be disposed; otherwise, false.\\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classProject1_1_1MainWindow_a3062c1009a2a7a443176cf874520eebe}\label{classProject1_1_1MainWindow_a3062c1009a2a7a443176cf874520eebe}} 
+\index{Project1\+::\+Main\+Window@{Project1\+::\+Main\+Window}!Initialize\+Component@{Initialize\+Component}}
+\index{Initialize\+Component@{Initialize\+Component}!Project1\+::\+Main\+Window@{Project1\+::\+Main\+Window}}
+\subsubsection{\texorpdfstring{Initialize\+Component()}{InitializeComponent()}}
+{\footnotesize\ttfamily void Project1.\+Main\+Window.\+Initialize\+Component (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [private]}}
+
+
+
+Required method for Designer support -\/ do not modify the contents of this method with the code editor. 
+
+\mbox{\Hypertarget{classProject1_1_1MainWindow_a31c174049fa92aa29587cf81f7749bd3}\label{classProject1_1_1MainWindow_a31c174049fa92aa29587cf81f7749bd3}} 
+\index{Project1\+::\+Main\+Window@{Project1\+::\+Main\+Window}!Main\+Window\+\_\+\+Load@{Main\+Window\+\_\+\+Load}}
+\index{Main\+Window\+\_\+\+Load@{Main\+Window\+\_\+\+Load}!Project1\+::\+Main\+Window@{Project1\+::\+Main\+Window}}
+\subsubsection{\texorpdfstring{Main\+Window\+\_\+\+Load()}{MainWindow\_Load()}}
+{\footnotesize\ttfamily void Project1.\+Main\+Window.\+Main\+Window\+\_\+\+Load (\begin{DoxyParamCaption}\item[{object}]{sender,  }\item[{Event\+Args}]{e }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [private]}}
+
+
+
+Handles the Load event of the \hyperlink{classProject1_1_1MainWindow}{Main\+Window} control. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em sender} & The source of the event.\\
+\hline
+{\em e} & The Event\+Args instance containing the event data.\\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classProject1_1_1MainWindow_af3d1ecd028cb95773e1c1eec3a28e7ce}\label{classProject1_1_1MainWindow_af3d1ecd028cb95773e1c1eec3a28e7ce}} 
+\index{Project1\+::\+Main\+Window@{Project1\+::\+Main\+Window}!Reload\+Attendees@{Reload\+Attendees}}
+\index{Reload\+Attendees@{Reload\+Attendees}!Project1\+::\+Main\+Window@{Project1\+::\+Main\+Window}}
+\subsubsection{\texorpdfstring{Reload\+Attendees()}{ReloadAttendees()}}
+{\footnotesize\ttfamily void Project1.\+Main\+Window.\+Reload\+Attendees (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [package]}}
+
+
+
+Reloads the attendees. 
+
+\mbox{\Hypertarget{classProject1_1_1MainWindow_aef6b435caef02f80d3f3752684cf00f6}\label{classProject1_1_1MainWindow_aef6b435caef02f80d3f3752684cf00f6}} 
+\index{Project1\+::\+Main\+Window@{Project1\+::\+Main\+Window}!Reload\+Events@{Reload\+Events}}
+\index{Reload\+Events@{Reload\+Events}!Project1\+::\+Main\+Window@{Project1\+::\+Main\+Window}}
+\subsubsection{\texorpdfstring{Reload\+Events()}{ReloadEvents()}}
+{\footnotesize\ttfamily void Project1.\+Main\+Window.\+Reload\+Events (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [package]}}
+
+
+
+Reloads the events. 
+
+
+
+\subsection{Member Data Documentation}
+\mbox{\Hypertarget{classProject1_1_1MainWindow_a3d99b09991f5611424ec9886d8805fce}\label{classProject1_1_1MainWindow_a3d99b09991f5611424ec9886d8805fce}} 
+\index{Project1\+::\+Main\+Window@{Project1\+::\+Main\+Window}!add\+Event\+Button@{add\+Event\+Button}}
+\index{add\+Event\+Button@{add\+Event\+Button}!Project1\+::\+Main\+Window@{Project1\+::\+Main\+Window}}
+\subsubsection{\texorpdfstring{add\+Event\+Button}{addEventButton}}
+{\footnotesize\ttfamily System.\+Windows.\+Forms.\+Button Project1.\+Main\+Window.\+add\+Event\+Button\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{classProject1_1_1MainWindow_a87e159953fb2bc0cb9276dc85f2e7979}\label{classProject1_1_1MainWindow_a87e159953fb2bc0cb9276dc85f2e7979}} 
+\index{Project1\+::\+Main\+Window@{Project1\+::\+Main\+Window}!attendee\+View@{attendee\+View}}
+\index{attendee\+View@{attendee\+View}!Project1\+::\+Main\+Window@{Project1\+::\+Main\+Window}}
+\subsubsection{\texorpdfstring{attendee\+View}{attendeeView}}
+{\footnotesize\ttfamily System.\+Windows.\+Forms.\+List\+View Project1.\+Main\+Window.\+attendee\+View\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{classProject1_1_1MainWindow_a3e34c89029ddf939d607ea8638e444c8}\label{classProject1_1_1MainWindow_a3e34c89029ddf939d607ea8638e444c8}} 
+\index{Project1\+::\+Main\+Window@{Project1\+::\+Main\+Window}!availability\+Button@{availability\+Button}}
+\index{availability\+Button@{availability\+Button}!Project1\+::\+Main\+Window@{Project1\+::\+Main\+Window}}
+\subsubsection{\texorpdfstring{availability\+Button}{availabilityButton}}
+{\footnotesize\ttfamily System.\+Windows.\+Forms.\+Button Project1.\+Main\+Window.\+availability\+Button\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{classProject1_1_1MainWindow_a2e6cf3cf871c168672d16d8c12211047}\label{classProject1_1_1MainWindow_a2e6cf3cf871c168672d16d8c12211047}} 
+\index{Project1\+::\+Main\+Window@{Project1\+::\+Main\+Window}!check\+Box1@{check\+Box1}}
+\index{check\+Box1@{check\+Box1}!Project1\+::\+Main\+Window@{Project1\+::\+Main\+Window}}
+\subsubsection{\texorpdfstring{check\+Box1}{checkBox1}}
+{\footnotesize\ttfamily System.\+Windows.\+Forms.\+Check\+Box Project1.\+Main\+Window.\+check\+Box1\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{classProject1_1_1MainWindow_ac624f584eb3fbe129389e2b3e287f596}\label{classProject1_1_1MainWindow_ac624f584eb3fbe129389e2b3e287f596}} 
+\index{Project1\+::\+Main\+Window@{Project1\+::\+Main\+Window}!column\+Header10@{column\+Header10}}
+\index{column\+Header10@{column\+Header10}!Project1\+::\+Main\+Window@{Project1\+::\+Main\+Window}}
+\subsubsection{\texorpdfstring{column\+Header10}{columnHeader10}}
+{\footnotesize\ttfamily System.\+Windows.\+Forms.\+Column\+Header Project1.\+Main\+Window.\+column\+Header10\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{classProject1_1_1MainWindow_aaed23b23d4df062fe99afdee1730e800}\label{classProject1_1_1MainWindow_aaed23b23d4df062fe99afdee1730e800}} 
+\index{Project1\+::\+Main\+Window@{Project1\+::\+Main\+Window}!column\+Header11@{column\+Header11}}
+\index{column\+Header11@{column\+Header11}!Project1\+::\+Main\+Window@{Project1\+::\+Main\+Window}}
+\subsubsection{\texorpdfstring{column\+Header11}{columnHeader11}}
+{\footnotesize\ttfamily System.\+Windows.\+Forms.\+Column\+Header Project1.\+Main\+Window.\+column\+Header11\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{classProject1_1_1MainWindow_a7ad81e39a25ae4972c28b1d805b827a9}\label{classProject1_1_1MainWindow_a7ad81e39a25ae4972c28b1d805b827a9}} 
+\index{Project1\+::\+Main\+Window@{Project1\+::\+Main\+Window}!column\+Header12@{column\+Header12}}
+\index{column\+Header12@{column\+Header12}!Project1\+::\+Main\+Window@{Project1\+::\+Main\+Window}}
+\subsubsection{\texorpdfstring{column\+Header12}{columnHeader12}}
+{\footnotesize\ttfamily System.\+Windows.\+Forms.\+Column\+Header Project1.\+Main\+Window.\+column\+Header12\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{classProject1_1_1MainWindow_ab661e6cae54e37f16fed3117b6b038e6}\label{classProject1_1_1MainWindow_ab661e6cae54e37f16fed3117b6b038e6}} 
+\index{Project1\+::\+Main\+Window@{Project1\+::\+Main\+Window}!column\+Header13@{column\+Header13}}
+\index{column\+Header13@{column\+Header13}!Project1\+::\+Main\+Window@{Project1\+::\+Main\+Window}}
+\subsubsection{\texorpdfstring{column\+Header13}{columnHeader13}}
+{\footnotesize\ttfamily System.\+Windows.\+Forms.\+Column\+Header Project1.\+Main\+Window.\+column\+Header13\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{classProject1_1_1MainWindow_a2814c0939a2ecfdcb2506f83fcfff080}\label{classProject1_1_1MainWindow_a2814c0939a2ecfdcb2506f83fcfff080}} 
+\index{Project1\+::\+Main\+Window@{Project1\+::\+Main\+Window}!column\+Header3@{column\+Header3}}
+\index{column\+Header3@{column\+Header3}!Project1\+::\+Main\+Window@{Project1\+::\+Main\+Window}}
+\subsubsection{\texorpdfstring{column\+Header3}{columnHeader3}}
+{\footnotesize\ttfamily System.\+Windows.\+Forms.\+Column\+Header Project1.\+Main\+Window.\+column\+Header3\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{classProject1_1_1MainWindow_a8cc8ae19b57ec667fa7cc09ed7446056}\label{classProject1_1_1MainWindow_a8cc8ae19b57ec667fa7cc09ed7446056}} 
+\index{Project1\+::\+Main\+Window@{Project1\+::\+Main\+Window}!column\+Header5@{column\+Header5}}
+\index{column\+Header5@{column\+Header5}!Project1\+::\+Main\+Window@{Project1\+::\+Main\+Window}}
+\subsubsection{\texorpdfstring{column\+Header5}{columnHeader5}}
+{\footnotesize\ttfamily System.\+Windows.\+Forms.\+Column\+Header Project1.\+Main\+Window.\+column\+Header5\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{classProject1_1_1MainWindow_a5041ff81bbef58fc72cb0914afa984ea}\label{classProject1_1_1MainWindow_a5041ff81bbef58fc72cb0914afa984ea}} 
+\index{Project1\+::\+Main\+Window@{Project1\+::\+Main\+Window}!column\+Header6@{column\+Header6}}
+\index{column\+Header6@{column\+Header6}!Project1\+::\+Main\+Window@{Project1\+::\+Main\+Window}}
+\subsubsection{\texorpdfstring{column\+Header6}{columnHeader6}}
+{\footnotesize\ttfamily System.\+Windows.\+Forms.\+Column\+Header Project1.\+Main\+Window.\+column\+Header6\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{classProject1_1_1MainWindow_acaaac5d2776ef69f8e9abbb61b06ee64}\label{classProject1_1_1MainWindow_acaaac5d2776ef69f8e9abbb61b06ee64}} 
+\index{Project1\+::\+Main\+Window@{Project1\+::\+Main\+Window}!column\+Header7@{column\+Header7}}
+\index{column\+Header7@{column\+Header7}!Project1\+::\+Main\+Window@{Project1\+::\+Main\+Window}}
+\subsubsection{\texorpdfstring{column\+Header7}{columnHeader7}}
+{\footnotesize\ttfamily System.\+Windows.\+Forms.\+Column\+Header Project1.\+Main\+Window.\+column\+Header7\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{classProject1_1_1MainWindow_ab73af7a7685fb735923099a87cc5c81a}\label{classProject1_1_1MainWindow_ab73af7a7685fb735923099a87cc5c81a}} 
+\index{Project1\+::\+Main\+Window@{Project1\+::\+Main\+Window}!components@{components}}
+\index{components@{components}!Project1\+::\+Main\+Window@{Project1\+::\+Main\+Window}}
+\subsubsection{\texorpdfstring{components}{components}}
+{\footnotesize\ttfamily System.\+Component\+Model.\+I\+Container Project1.\+Main\+Window.\+components = null\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Required designer variable. 
+
+\mbox{\Hypertarget{classProject1_1_1MainWindow_ae3afd09951104ecaa17ed586dd934249}\label{classProject1_1_1MainWindow_ae3afd09951104ecaa17ed586dd934249}} 
+\index{Project1\+::\+Main\+Window@{Project1\+::\+Main\+Window}!Events\+List@{Events\+List}}
+\index{Events\+List@{Events\+List}!Project1\+::\+Main\+Window@{Project1\+::\+Main\+Window}}
+\subsubsection{\texorpdfstring{Events\+List}{EventsList}}
+{\footnotesize\ttfamily List$<$\hyperlink{classProject1_1_1Event}{Event}$>$ Project1.\+Main\+Window.\+Events\+List = new List$<$\hyperlink{classProject1_1_1Event}{Event}$>$()\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [package]}}
+
+
+
+The events list 
+
+\mbox{\Hypertarget{classProject1_1_1MainWindow_a48288e76cf64892256e3ec2f3173bcb8}\label{classProject1_1_1MainWindow_a48288e76cf64892256e3ec2f3173bcb8}} 
+\index{Project1\+::\+Main\+Window@{Project1\+::\+Main\+Window}!event\+View@{event\+View}}
+\index{event\+View@{event\+View}!Project1\+::\+Main\+Window@{Project1\+::\+Main\+Window}}
+\subsubsection{\texorpdfstring{event\+View}{eventView}}
+{\footnotesize\ttfamily System.\+Windows.\+Forms.\+List\+View Project1.\+Main\+Window.\+event\+View\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+Project1/\hyperlink{MainWindow_8cs}{Main\+Window.\+cs}\item 
+Project1/\hyperlink{MainWindow_8Designer_8cs}{Main\+Window.\+Designer.\+cs}\end{DoxyCompactItemize}

@@ -2,6 +2,9 @@
 
 namespace Project1
 {
+    /// <summary>
+    /// Attendee class
+    /// </summary>
     public class Attendee
     {
         /// <summary>

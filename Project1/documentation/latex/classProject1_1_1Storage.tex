@@ -1,0 +1,142 @@
+\hypertarget{classProject1_1_1Storage}{}\section{Project1.\+Storage Class Reference}
+\label{classProject1_1_1Storage}\index{Project1.\+Storage@{Project1.\+Storage}}
+
+
+Class for helping with file storage/reading  
+
+
+\subsection*{Static Package Functions}
+\begin{DoxyCompactItemize}
+\item 
+static String \hyperlink{classProject1_1_1Storage_a609f09f2cea1638321ac856303b7837d}{Times\+Formatted} (Date\+Time\mbox{[}$\,$\mbox{]} times, bool mode24=false)
+\begin{DoxyCompactList}\small\item\em Formats a Date\+Time array into a string \end{DoxyCompactList}\item 
+static void \hyperlink{classProject1_1_1Storage_ae01896659ba07c9e623c37d3ed1caaef}{Add\+Event} (\hyperlink{classProject1_1_1Event}{Event} ev)
+\begin{DoxyCompactList}\small\item\em Adds \hyperlink{classProject1_1_1Event}{Event} to file. Output Format\+: user\+\_\+name event\+\_\+name event\+\_\+time \mbox{[}times available\mbox{]} separated by a , \end{DoxyCompactList}\item 
+static void \hyperlink{classProject1_1_1Storage_a565feda8803f2fccc4e5a3335903e4fc}{Add\+Attendee} (\hyperlink{classProject1_1_1Attendee}{Attendee} attendee)
+\begin{DoxyCompactList}\small\item\em Adds the attendee to file. Format\+: attendee\+Name event\+Name \mbox{[}times\mbox{]} \end{DoxyCompactList}\item 
+static \hyperlink{classProject1_1_1Attendee}{Attendee} \hyperlink{classProject1_1_1Storage_a4aebfb33e4df6b8694853cd7c68c4d56}{Read\+Attendee} (string\mbox{[}$\,$\mbox{]} items)
+\begin{DoxyCompactList}\small\item\em Reads attendee from a string array \end{DoxyCompactList}\item 
+static \hyperlink{classProject1_1_1Event}{Event} \hyperlink{classProject1_1_1Storage_adba708b66c28fbd3e6dff0fb2117d050}{Read\+Event} (string\mbox{[}$\,$\mbox{]} items)
+\begin{DoxyCompactList}\small\item\em Reads the event from a string array \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Static Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static Date\+Time \mbox{[}$\,$\mbox{]} \hyperlink{classProject1_1_1Storage_a376dc3238d3e8ab23781d5401e428865}{Read\+Times} (string\mbox{[}$\,$\mbox{]} times)
+\begin{DoxyCompactList}\small\item\em Reads the times. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Class for helping with file storage/reading 
+
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{classProject1_1_1Storage_a565feda8803f2fccc4e5a3335903e4fc}\label{classProject1_1_1Storage_a565feda8803f2fccc4e5a3335903e4fc}} 
+\index{Project1\+::\+Storage@{Project1\+::\+Storage}!Add\+Attendee@{Add\+Attendee}}
+\index{Add\+Attendee@{Add\+Attendee}!Project1\+::\+Storage@{Project1\+::\+Storage}}
+\subsubsection{\texorpdfstring{Add\+Attendee()}{AddAttendee()}}
+{\footnotesize\ttfamily static void Project1.\+Storage.\+Add\+Attendee (\begin{DoxyParamCaption}\item[{\hyperlink{classProject1_1_1Attendee}{Attendee}}]{attendee }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}, {\ttfamily [package]}}
+
+
+
+Adds the attendee to file. Format\+: attendee\+Name event\+Name \mbox{[}times\mbox{]} 
+
+
+\begin{DoxyParams}{Parameters}
+{\em attendee} & The attendee.\\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classProject1_1_1Storage_ae01896659ba07c9e623c37d3ed1caaef}\label{classProject1_1_1Storage_ae01896659ba07c9e623c37d3ed1caaef}} 
+\index{Project1\+::\+Storage@{Project1\+::\+Storage}!Add\+Event@{Add\+Event}}
+\index{Add\+Event@{Add\+Event}!Project1\+::\+Storage@{Project1\+::\+Storage}}
+\subsubsection{\texorpdfstring{Add\+Event()}{AddEvent()}}
+{\footnotesize\ttfamily static void Project1.\+Storage.\+Add\+Event (\begin{DoxyParamCaption}\item[{\hyperlink{classProject1_1_1Event}{Event}}]{ev }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}, {\ttfamily [package]}}
+
+
+
+Adds \hyperlink{classProject1_1_1Event}{Event} to file. Output Format\+: user\+\_\+name event\+\_\+name event\+\_\+time \mbox{[}times available\mbox{]} separated by a , 
+
+
+\begin{DoxyParams}{Parameters}
+{\em ev} & The ev.\\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classProject1_1_1Storage_a4aebfb33e4df6b8694853cd7c68c4d56}\label{classProject1_1_1Storage_a4aebfb33e4df6b8694853cd7c68c4d56}} 
+\index{Project1\+::\+Storage@{Project1\+::\+Storage}!Read\+Attendee@{Read\+Attendee}}
+\index{Read\+Attendee@{Read\+Attendee}!Project1\+::\+Storage@{Project1\+::\+Storage}}
+\subsubsection{\texorpdfstring{Read\+Attendee()}{ReadAttendee()}}
+{\footnotesize\ttfamily static \hyperlink{classProject1_1_1Attendee}{Attendee} Project1.\+Storage.\+Read\+Attendee (\begin{DoxyParamCaption}\item[{string \mbox{[}$\,$\mbox{]}}]{items }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}, {\ttfamily [package]}}
+
+
+
+Reads attendee from a string array 
+
+
+\begin{DoxyParams}{Parameters}
+{\em items} & The items.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
+\mbox{\Hypertarget{classProject1_1_1Storage_adba708b66c28fbd3e6dff0fb2117d050}\label{classProject1_1_1Storage_adba708b66c28fbd3e6dff0fb2117d050}} 
+\index{Project1\+::\+Storage@{Project1\+::\+Storage}!Read\+Event@{Read\+Event}}
+\index{Read\+Event@{Read\+Event}!Project1\+::\+Storage@{Project1\+::\+Storage}}
+\subsubsection{\texorpdfstring{Read\+Event()}{ReadEvent()}}
+{\footnotesize\ttfamily static \hyperlink{classProject1_1_1Event}{Event} Project1.\+Storage.\+Read\+Event (\begin{DoxyParamCaption}\item[{string \mbox{[}$\,$\mbox{]}}]{items }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}, {\ttfamily [package]}}
+
+
+
+Reads the event from a string array 
+
+
+\begin{DoxyParams}{Parameters}
+{\em items} & The items.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
+\mbox{\Hypertarget{classProject1_1_1Storage_a376dc3238d3e8ab23781d5401e428865}\label{classProject1_1_1Storage_a376dc3238d3e8ab23781d5401e428865}} 
+\index{Project1\+::\+Storage@{Project1\+::\+Storage}!Read\+Times@{Read\+Times}}
+\index{Read\+Times@{Read\+Times}!Project1\+::\+Storage@{Project1\+::\+Storage}}
+\subsubsection{\texorpdfstring{Read\+Times()}{ReadTimes()}}
+{\footnotesize\ttfamily static Date\+Time \mbox{[}$\,$\mbox{]} Project1.\+Storage.\+Read\+Times (\begin{DoxyParamCaption}\item[{string \mbox{[}$\,$\mbox{]}}]{times }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}, {\ttfamily [private]}}
+
+
+
+Reads the times. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em times} & The times.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
+\mbox{\Hypertarget{classProject1_1_1Storage_a609f09f2cea1638321ac856303b7837d}\label{classProject1_1_1Storage_a609f09f2cea1638321ac856303b7837d}} 
+\index{Project1\+::\+Storage@{Project1\+::\+Storage}!Times\+Formatted@{Times\+Formatted}}
+\index{Times\+Formatted@{Times\+Formatted}!Project1\+::\+Storage@{Project1\+::\+Storage}}
+\subsubsection{\texorpdfstring{Times\+Formatted()}{TimesFormatted()}}
+{\footnotesize\ttfamily static String Project1.\+Storage.\+Times\+Formatted (\begin{DoxyParamCaption}\item[{Date\+Time \mbox{[}$\,$\mbox{]}}]{times,  }\item[{bool}]{mode24 = {\ttfamily false} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}, {\ttfamily [package]}}
+
+
+
+Formats a Date\+Time array into a string 
+
+
+\begin{DoxyParams}{Parameters}
+{\em times} & The times.\\
+\hline
+{\em mode24} & if set to {\ttfamily true} \mbox{[}mode24\mbox{]}.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+Project1/\hyperlink{Storage_8cs}{Storage.\+cs}\end{DoxyCompactItemize}

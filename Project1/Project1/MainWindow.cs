@@ -5,6 +5,10 @@ using System.Windows.Forms;
 
 namespace Project1
 {
+    /// <summary>
+    /// The Main Window form
+    /// </summary>
+    /// <seealso cref="System.Windows.Forms.Form" />
     public partial class MainWindow : Form
     {
         /// <summary>

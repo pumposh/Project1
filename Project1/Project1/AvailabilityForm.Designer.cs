@@ -1,5 +1,9 @@
 ﻿namespace Project1
 {
+    /// <summary>
+    /// Form for adding availability
+    /// </summary>
+    /// <seealso cref="System.Windows.Forms.Form" />
     partial class AvailabilityForm
     {
         /// <summary>

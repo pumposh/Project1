@@ -1,0 +1,339 @@
+\hypertarget{classProject1_1_1EventInfo}{}\section{Project1.\+Event\+Info Class Reference}
+\label{classProject1_1_1EventInfo}\index{Project1.\+Event\+Info@{Project1.\+Event\+Info}}
+
+
+The event creation form  
+
+
+Inheritance diagram for Project1.\+Event\+Info\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classProject1_1_1EventInfo}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classProject1_1_1EventInfo_a9bf24095fee3d3b879e61fa990e8209c}{Event\+Info} (\hyperlink{classProject1_1_1MainWindow}{Main\+Window} m)
+\begin{DoxyCompactList}\small\item\em Passes the \hyperlink{classProject1_1_1MainWindow}{Main\+Window} into this window to allow interaction between the two. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+override void \hyperlink{classProject1_1_1EventInfo_aa54f1ee810e1b9ea20b3bb9ed76be80b}{Dispose} (bool disposing)
+\begin{DoxyCompactList}\small\item\em Clean up any resources being used. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Package Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classProject1_1_1MainWindow}{Main\+Window} \hyperlink{classProject1_1_1EventInfo_ab2930e440128bf910d922e7615676d0d}{main} = null
+\begin{DoxyCompactList}\small\item\em The main \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{classProject1_1_1EventInfo_a7f1582debc3b36848116513dbefb690c}{add\+Button\+\_\+\+Click} (object sender, Event\+Args e)
+\begin{DoxyCompactList}\small\item\em Adds a selected time from the time\+Box to the list\+Box. The Item is inserted in ascending order. \end{DoxyCompactList}\item 
+void \hyperlink{classProject1_1_1EventInfo_aaa2e7fde2f469c6769b8099941bd66d0}{remove\+Button\+\_\+\+Click} (object sender, Event\+Args e)
+\begin{DoxyCompactList}\small\item\em Deletes all time slots from the listbox \end{DoxyCompactList}\item 
+void \hyperlink{classProject1_1_1EventInfo_a3b0662eb1959327307b4e4992123378f}{add\+Event\+Button\+\_\+\+Click} (object sender, Event\+Args e)
+\begin{DoxyCompactList}\small\item\em Saves event information to a file and checks for correctness. \end{DoxyCompactList}\item 
+Date\+Time \mbox{[}$\,$\mbox{]} \hyperlink{classProject1_1_1EventInfo_a12da689af1a5f87c244d014247cf4f73}{Time\+Slots} ()
+\begin{DoxyCompactList}\small\item\em Times the slots. \end{DoxyCompactList}\item 
+void \hyperlink{classProject1_1_1EventInfo_a3bf5e88c899ab15fbe76bdccc1a72e9d}{Event\+Info\+\_\+\+Load} (object sender, Event\+Args e)
+\begin{DoxyCompactList}\small\item\em Adds time slots into combobox for selection in 12 hr format and prevents user from picking an earlier date than today. \end{DoxyCompactList}\item 
+void \hyperlink{classProject1_1_1EventInfo_a64e3ce2cb6745b461022d2a968cad153}{check\+Box1\+\_\+\+Checked\+Changed} (object sender, Event\+Args e)
+\begin{DoxyCompactList}\small\item\em Changes time format between 24 hr and 12 hr format for combobox and listbox. \end{DoxyCompactList}\item 
+void \hyperlink{classProject1_1_1EventInfo_ad8918624e8ae88b80277a9c1b913b1c3}{Initialize\+Component} ()
+\begin{DoxyCompactList}\small\item\em Required method for Designer support -\/ do not modify the contents of this method with the code editor. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+System.\+Component\+Model.\+I\+Container \hyperlink{classProject1_1_1EventInfo_a70368824a7f92cc152cc1371ebd6e5f1}{components} = null
+\begin{DoxyCompactList}\small\item\em Required designer variable. \end{DoxyCompactList}\item 
+System.\+Windows.\+Forms.\+Text\+Box \hyperlink{classProject1_1_1EventInfo_ade60ccc9dc0e3789c0323820d368f667}{event\+Name\+Box}
+\item 
+System.\+Windows.\+Forms.\+Label \hyperlink{classProject1_1_1EventInfo_ab0c0388a63ceddd8ecde61ce4e00ffe8}{label1}
+\item 
+System.\+Windows.\+Forms.\+Date\+Time\+Picker \hyperlink{classProject1_1_1EventInfo_ad9fd1f5363989b649ffe1681afda852c}{date\+Time\+Picker1}
+\item 
+System.\+Windows.\+Forms.\+Label \hyperlink{classProject1_1_1EventInfo_a27ead48983981a1f8e4d936ad0a113eb}{label2}
+\item 
+System.\+Windows.\+Forms.\+Label \hyperlink{classProject1_1_1EventInfo_a5489960f8593264df7d3a32fc362c95e}{label3}
+\item 
+System.\+Windows.\+Forms.\+List\+Box \hyperlink{classProject1_1_1EventInfo_a229ac9e88dea0086ae9055095dc98da4}{list\+Box1}
+\item 
+System.\+Windows.\+Forms.\+Button \hyperlink{classProject1_1_1EventInfo_a1b28ec9d90e8ff63e7589515f7b6f64a}{add\+Button}
+\item 
+System.\+Windows.\+Forms.\+Button \hyperlink{classProject1_1_1EventInfo_ae3ecbf994b93d37b2d6e42fcb0631ef0}{remove\+Button}
+\item 
+System.\+Windows.\+Forms.\+Check\+Box \hyperlink{classProject1_1_1EventInfo_ace75bf4615d0f8add3e53b6791fb671c}{check\+Box1}
+\item 
+System.\+Windows.\+Forms.\+Combo\+Box \hyperlink{classProject1_1_1EventInfo_ad368077ede71cc2fb15a34a5a95ac978}{times\+Box}
+\item 
+System.\+Windows.\+Forms.\+Button \hyperlink{classProject1_1_1EventInfo_a3a841021c735952afd4c491508540c62}{add\+Event\+Button}
+\item 
+System.\+Windows.\+Forms.\+Label \hyperlink{classProject1_1_1EventInfo_ac29d91498e302af75fe8690676184646}{label4}
+\item 
+System.\+Windows.\+Forms.\+Text\+Box \hyperlink{classProject1_1_1EventInfo_aec872f7ab76768098f8d007d4258c7de}{name\+Box}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+The event creation form 
+
+Designer for event form 
+
+\begin{DoxySeeAlso}{See also}
+System.\+Windows.\+Forms.\+Form
+
+
+\end{DoxySeeAlso}
+
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classProject1_1_1EventInfo_a9bf24095fee3d3b879e61fa990e8209c}\label{classProject1_1_1EventInfo_a9bf24095fee3d3b879e61fa990e8209c}} 
+\index{Project1\+::\+Event\+Info@{Project1\+::\+Event\+Info}!Event\+Info@{Event\+Info}}
+\index{Event\+Info@{Event\+Info}!Project1\+::\+Event\+Info@{Project1\+::\+Event\+Info}}
+\subsubsection{\texorpdfstring{Event\+Info()}{EventInfo()}}
+{\footnotesize\ttfamily Project1.\+Event\+Info.\+Event\+Info (\begin{DoxyParamCaption}\item[{\hyperlink{classProject1_1_1MainWindow}{Main\+Window}}]{m }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Passes the \hyperlink{classProject1_1_1MainWindow}{Main\+Window} into this window to allow interaction between the two. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em m} & The \hyperlink{classProject1_1_1MainWindow}{Main\+Window}.\\
+\hline
+\end{DoxyParams}
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{classProject1_1_1EventInfo_a7f1582debc3b36848116513dbefb690c}\label{classProject1_1_1EventInfo_a7f1582debc3b36848116513dbefb690c}} 
+\index{Project1\+::\+Event\+Info@{Project1\+::\+Event\+Info}!add\+Button\+\_\+\+Click@{add\+Button\+\_\+\+Click}}
+\index{add\+Button\+\_\+\+Click@{add\+Button\+\_\+\+Click}!Project1\+::\+Event\+Info@{Project1\+::\+Event\+Info}}
+\subsubsection{\texorpdfstring{add\+Button\+\_\+\+Click()}{addButton\_Click()}}
+{\footnotesize\ttfamily void Project1.\+Event\+Info.\+add\+Button\+\_\+\+Click (\begin{DoxyParamCaption}\item[{object}]{sender,  }\item[{Event\+Args}]{e }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [private]}}
+
+
+
+Adds a selected time from the time\+Box to the list\+Box. The Item is inserted in ascending order. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em sender} & The source of the event.\\
+\hline
+{\em e} & The Event\+Args instance containing the event data.\\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classProject1_1_1EventInfo_a3b0662eb1959327307b4e4992123378f}\label{classProject1_1_1EventInfo_a3b0662eb1959327307b4e4992123378f}} 
+\index{Project1\+::\+Event\+Info@{Project1\+::\+Event\+Info}!add\+Event\+Button\+\_\+\+Click@{add\+Event\+Button\+\_\+\+Click}}
+\index{add\+Event\+Button\+\_\+\+Click@{add\+Event\+Button\+\_\+\+Click}!Project1\+::\+Event\+Info@{Project1\+::\+Event\+Info}}
+\subsubsection{\texorpdfstring{add\+Event\+Button\+\_\+\+Click()}{addEventButton\_Click()}}
+{\footnotesize\ttfamily void Project1.\+Event\+Info.\+add\+Event\+Button\+\_\+\+Click (\begin{DoxyParamCaption}\item[{object}]{sender,  }\item[{Event\+Args}]{e }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [private]}}
+
+
+
+Saves event information to a file and checks for correctness. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em sender} & The source of the event.\\
+\hline
+{\em e} & The Event\+Args instance containing the event data.\\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classProject1_1_1EventInfo_a64e3ce2cb6745b461022d2a968cad153}\label{classProject1_1_1EventInfo_a64e3ce2cb6745b461022d2a968cad153}} 
+\index{Project1\+::\+Event\+Info@{Project1\+::\+Event\+Info}!check\+Box1\+\_\+\+Checked\+Changed@{check\+Box1\+\_\+\+Checked\+Changed}}
+\index{check\+Box1\+\_\+\+Checked\+Changed@{check\+Box1\+\_\+\+Checked\+Changed}!Project1\+::\+Event\+Info@{Project1\+::\+Event\+Info}}
+\subsubsection{\texorpdfstring{check\+Box1\+\_\+\+Checked\+Changed()}{checkBox1\_CheckedChanged()}}
+{\footnotesize\ttfamily void Project1.\+Event\+Info.\+check\+Box1\+\_\+\+Checked\+Changed (\begin{DoxyParamCaption}\item[{object}]{sender,  }\item[{Event\+Args}]{e }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [private]}}
+
+
+
+Changes time format between 24 hr and 12 hr format for combobox and listbox. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em sender} & The source of the event.\\
+\hline
+{\em e} & The Event\+Args instance containing the event data.\\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classProject1_1_1EventInfo_aa54f1ee810e1b9ea20b3bb9ed76be80b}\label{classProject1_1_1EventInfo_aa54f1ee810e1b9ea20b3bb9ed76be80b}} 
+\index{Project1\+::\+Event\+Info@{Project1\+::\+Event\+Info}!Dispose@{Dispose}}
+\index{Dispose@{Dispose}!Project1\+::\+Event\+Info@{Project1\+::\+Event\+Info}}
+\subsubsection{\texorpdfstring{Dispose()}{Dispose()}}
+{\footnotesize\ttfamily override void Project1.\+Event\+Info.\+Dispose (\begin{DoxyParamCaption}\item[{bool}]{disposing }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [protected]}}
+
+
+
+Clean up any resources being used. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em disposing} & true if managed resources should be disposed; otherwise, false.\\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classProject1_1_1EventInfo_a3bf5e88c899ab15fbe76bdccc1a72e9d}\label{classProject1_1_1EventInfo_a3bf5e88c899ab15fbe76bdccc1a72e9d}} 
+\index{Project1\+::\+Event\+Info@{Project1\+::\+Event\+Info}!Event\+Info\+\_\+\+Load@{Event\+Info\+\_\+\+Load}}
+\index{Event\+Info\+\_\+\+Load@{Event\+Info\+\_\+\+Load}!Project1\+::\+Event\+Info@{Project1\+::\+Event\+Info}}
+\subsubsection{\texorpdfstring{Event\+Info\+\_\+\+Load()}{EventInfo\_Load()}}
+{\footnotesize\ttfamily void Project1.\+Event\+Info.\+Event\+Info\+\_\+\+Load (\begin{DoxyParamCaption}\item[{object}]{sender,  }\item[{Event\+Args}]{e }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [private]}}
+
+
+
+Adds time slots into combobox for selection in 12 hr format and prevents user from picking an earlier date than today. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em sender} & The source of the event.\\
+\hline
+{\em e} & The Event\+Args instance containing the event data.\\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classProject1_1_1EventInfo_ad8918624e8ae88b80277a9c1b913b1c3}\label{classProject1_1_1EventInfo_ad8918624e8ae88b80277a9c1b913b1c3}} 
+\index{Project1\+::\+Event\+Info@{Project1\+::\+Event\+Info}!Initialize\+Component@{Initialize\+Component}}
+\index{Initialize\+Component@{Initialize\+Component}!Project1\+::\+Event\+Info@{Project1\+::\+Event\+Info}}
+\subsubsection{\texorpdfstring{Initialize\+Component()}{InitializeComponent()}}
+{\footnotesize\ttfamily void Project1.\+Event\+Info.\+Initialize\+Component (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [private]}}
+
+
+
+Required method for Designer support -\/ do not modify the contents of this method with the code editor. 
+
+\mbox{\Hypertarget{classProject1_1_1EventInfo_aaa2e7fde2f469c6769b8099941bd66d0}\label{classProject1_1_1EventInfo_aaa2e7fde2f469c6769b8099941bd66d0}} 
+\index{Project1\+::\+Event\+Info@{Project1\+::\+Event\+Info}!remove\+Button\+\_\+\+Click@{remove\+Button\+\_\+\+Click}}
+\index{remove\+Button\+\_\+\+Click@{remove\+Button\+\_\+\+Click}!Project1\+::\+Event\+Info@{Project1\+::\+Event\+Info}}
+\subsubsection{\texorpdfstring{remove\+Button\+\_\+\+Click()}{removeButton\_Click()}}
+{\footnotesize\ttfamily void Project1.\+Event\+Info.\+remove\+Button\+\_\+\+Click (\begin{DoxyParamCaption}\item[{object}]{sender,  }\item[{Event\+Args}]{e }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [private]}}
+
+
+
+Deletes all time slots from the listbox 
+
+
+\begin{DoxyParams}{Parameters}
+{\em sender} & The source of the event.\\
+\hline
+{\em e} & The Event\+Args instance containing the event data.\\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classProject1_1_1EventInfo_a12da689af1a5f87c244d014247cf4f73}\label{classProject1_1_1EventInfo_a12da689af1a5f87c244d014247cf4f73}} 
+\index{Project1\+::\+Event\+Info@{Project1\+::\+Event\+Info}!Time\+Slots@{Time\+Slots}}
+\index{Time\+Slots@{Time\+Slots}!Project1\+::\+Event\+Info@{Project1\+::\+Event\+Info}}
+\subsubsection{\texorpdfstring{Time\+Slots()}{TimeSlots()}}
+{\footnotesize\ttfamily Date\+Time \mbox{[}$\,$\mbox{]} Project1.\+Event\+Info.\+Time\+Slots (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [private]}}
+
+
+
+Times the slots. 
+
+\begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
+
+
+\subsection{Member Data Documentation}
+\mbox{\Hypertarget{classProject1_1_1EventInfo_a1b28ec9d90e8ff63e7589515f7b6f64a}\label{classProject1_1_1EventInfo_a1b28ec9d90e8ff63e7589515f7b6f64a}} 
+\index{Project1\+::\+Event\+Info@{Project1\+::\+Event\+Info}!add\+Button@{add\+Button}}
+\index{add\+Button@{add\+Button}!Project1\+::\+Event\+Info@{Project1\+::\+Event\+Info}}
+\subsubsection{\texorpdfstring{add\+Button}{addButton}}
+{\footnotesize\ttfamily System.\+Windows.\+Forms.\+Button Project1.\+Event\+Info.\+add\+Button\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{classProject1_1_1EventInfo_a3a841021c735952afd4c491508540c62}\label{classProject1_1_1EventInfo_a3a841021c735952afd4c491508540c62}} 
+\index{Project1\+::\+Event\+Info@{Project1\+::\+Event\+Info}!add\+Event\+Button@{add\+Event\+Button}}
+\index{add\+Event\+Button@{add\+Event\+Button}!Project1\+::\+Event\+Info@{Project1\+::\+Event\+Info}}
+\subsubsection{\texorpdfstring{add\+Event\+Button}{addEventButton}}
+{\footnotesize\ttfamily System.\+Windows.\+Forms.\+Button Project1.\+Event\+Info.\+add\+Event\+Button\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{classProject1_1_1EventInfo_ace75bf4615d0f8add3e53b6791fb671c}\label{classProject1_1_1EventInfo_ace75bf4615d0f8add3e53b6791fb671c}} 
+\index{Project1\+::\+Event\+Info@{Project1\+::\+Event\+Info}!check\+Box1@{check\+Box1}}
+\index{check\+Box1@{check\+Box1}!Project1\+::\+Event\+Info@{Project1\+::\+Event\+Info}}
+\subsubsection{\texorpdfstring{check\+Box1}{checkBox1}}
+{\footnotesize\ttfamily System.\+Windows.\+Forms.\+Check\+Box Project1.\+Event\+Info.\+check\+Box1\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{classProject1_1_1EventInfo_a70368824a7f92cc152cc1371ebd6e5f1}\label{classProject1_1_1EventInfo_a70368824a7f92cc152cc1371ebd6e5f1}} 
+\index{Project1\+::\+Event\+Info@{Project1\+::\+Event\+Info}!components@{components}}
+\index{components@{components}!Project1\+::\+Event\+Info@{Project1\+::\+Event\+Info}}
+\subsubsection{\texorpdfstring{components}{components}}
+{\footnotesize\ttfamily System.\+Component\+Model.\+I\+Container Project1.\+Event\+Info.\+components = null\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Required designer variable. 
+
+\mbox{\Hypertarget{classProject1_1_1EventInfo_ad9fd1f5363989b649ffe1681afda852c}\label{classProject1_1_1EventInfo_ad9fd1f5363989b649ffe1681afda852c}} 
+\index{Project1\+::\+Event\+Info@{Project1\+::\+Event\+Info}!date\+Time\+Picker1@{date\+Time\+Picker1}}
+\index{date\+Time\+Picker1@{date\+Time\+Picker1}!Project1\+::\+Event\+Info@{Project1\+::\+Event\+Info}}
+\subsubsection{\texorpdfstring{date\+Time\+Picker1}{dateTimePicker1}}
+{\footnotesize\ttfamily System.\+Windows.\+Forms.\+Date\+Time\+Picker Project1.\+Event\+Info.\+date\+Time\+Picker1\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{classProject1_1_1EventInfo_ade60ccc9dc0e3789c0323820d368f667}\label{classProject1_1_1EventInfo_ade60ccc9dc0e3789c0323820d368f667}} 
+\index{Project1\+::\+Event\+Info@{Project1\+::\+Event\+Info}!event\+Name\+Box@{event\+Name\+Box}}
+\index{event\+Name\+Box@{event\+Name\+Box}!Project1\+::\+Event\+Info@{Project1\+::\+Event\+Info}}
+\subsubsection{\texorpdfstring{event\+Name\+Box}{eventNameBox}}
+{\footnotesize\ttfamily System.\+Windows.\+Forms.\+Text\+Box Project1.\+Event\+Info.\+event\+Name\+Box\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{classProject1_1_1EventInfo_ab0c0388a63ceddd8ecde61ce4e00ffe8}\label{classProject1_1_1EventInfo_ab0c0388a63ceddd8ecde61ce4e00ffe8}} 
+\index{Project1\+::\+Event\+Info@{Project1\+::\+Event\+Info}!label1@{label1}}
+\index{label1@{label1}!Project1\+::\+Event\+Info@{Project1\+::\+Event\+Info}}
+\subsubsection{\texorpdfstring{label1}{label1}}
+{\footnotesize\ttfamily System.\+Windows.\+Forms.\+Label Project1.\+Event\+Info.\+label1\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{classProject1_1_1EventInfo_a27ead48983981a1f8e4d936ad0a113eb}\label{classProject1_1_1EventInfo_a27ead48983981a1f8e4d936ad0a113eb}} 
+\index{Project1\+::\+Event\+Info@{Project1\+::\+Event\+Info}!label2@{label2}}
+\index{label2@{label2}!Project1\+::\+Event\+Info@{Project1\+::\+Event\+Info}}
+\subsubsection{\texorpdfstring{label2}{label2}}
+{\footnotesize\ttfamily System.\+Windows.\+Forms.\+Label Project1.\+Event\+Info.\+label2\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{classProject1_1_1EventInfo_a5489960f8593264df7d3a32fc362c95e}\label{classProject1_1_1EventInfo_a5489960f8593264df7d3a32fc362c95e}} 
+\index{Project1\+::\+Event\+Info@{Project1\+::\+Event\+Info}!label3@{label3}}
+\index{label3@{label3}!Project1\+::\+Event\+Info@{Project1\+::\+Event\+Info}}
+\subsubsection{\texorpdfstring{label3}{label3}}
+{\footnotesize\ttfamily System.\+Windows.\+Forms.\+Label Project1.\+Event\+Info.\+label3\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{classProject1_1_1EventInfo_ac29d91498e302af75fe8690676184646}\label{classProject1_1_1EventInfo_ac29d91498e302af75fe8690676184646}} 
+\index{Project1\+::\+Event\+Info@{Project1\+::\+Event\+Info}!label4@{label4}}
+\index{label4@{label4}!Project1\+::\+Event\+Info@{Project1\+::\+Event\+Info}}
+\subsubsection{\texorpdfstring{label4}{label4}}
+{\footnotesize\ttfamily System.\+Windows.\+Forms.\+Label Project1.\+Event\+Info.\+label4\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{classProject1_1_1EventInfo_a229ac9e88dea0086ae9055095dc98da4}\label{classProject1_1_1EventInfo_a229ac9e88dea0086ae9055095dc98da4}} 
+\index{Project1\+::\+Event\+Info@{Project1\+::\+Event\+Info}!list\+Box1@{list\+Box1}}
+\index{list\+Box1@{list\+Box1}!Project1\+::\+Event\+Info@{Project1\+::\+Event\+Info}}
+\subsubsection{\texorpdfstring{list\+Box1}{listBox1}}
+{\footnotesize\ttfamily System.\+Windows.\+Forms.\+List\+Box Project1.\+Event\+Info.\+list\+Box1\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{classProject1_1_1EventInfo_ab2930e440128bf910d922e7615676d0d}\label{classProject1_1_1EventInfo_ab2930e440128bf910d922e7615676d0d}} 
+\index{Project1\+::\+Event\+Info@{Project1\+::\+Event\+Info}!main@{main}}
+\index{main@{main}!Project1\+::\+Event\+Info@{Project1\+::\+Event\+Info}}
+\subsubsection{\texorpdfstring{main}{main}}
+{\footnotesize\ttfamily \hyperlink{classProject1_1_1MainWindow}{Main\+Window} Project1.\+Event\+Info.\+main = null\hspace{0.3cm}{\ttfamily [package]}}
+
+
+
+The main 
+
+\mbox{\Hypertarget{classProject1_1_1EventInfo_aec872f7ab76768098f8d007d4258c7de}\label{classProject1_1_1EventInfo_aec872f7ab76768098f8d007d4258c7de}} 
+\index{Project1\+::\+Event\+Info@{Project1\+::\+Event\+Info}!name\+Box@{name\+Box}}
+\index{name\+Box@{name\+Box}!Project1\+::\+Event\+Info@{Project1\+::\+Event\+Info}}
+\subsubsection{\texorpdfstring{name\+Box}{nameBox}}
+{\footnotesize\ttfamily System.\+Windows.\+Forms.\+Text\+Box Project1.\+Event\+Info.\+name\+Box\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{classProject1_1_1EventInfo_ae3ecbf994b93d37b2d6e42fcb0631ef0}\label{classProject1_1_1EventInfo_ae3ecbf994b93d37b2d6e42fcb0631ef0}} 
+\index{Project1\+::\+Event\+Info@{Project1\+::\+Event\+Info}!remove\+Button@{remove\+Button}}
+\index{remove\+Button@{remove\+Button}!Project1\+::\+Event\+Info@{Project1\+::\+Event\+Info}}
+\subsubsection{\texorpdfstring{remove\+Button}{removeButton}}
+{\footnotesize\ttfamily System.\+Windows.\+Forms.\+Button Project1.\+Event\+Info.\+remove\+Button\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{classProject1_1_1EventInfo_ad368077ede71cc2fb15a34a5a95ac978}\label{classProject1_1_1EventInfo_ad368077ede71cc2fb15a34a5a95ac978}} 
+\index{Project1\+::\+Event\+Info@{Project1\+::\+Event\+Info}!times\+Box@{times\+Box}}
+\index{times\+Box@{times\+Box}!Project1\+::\+Event\+Info@{Project1\+::\+Event\+Info}}
+\subsubsection{\texorpdfstring{times\+Box}{timesBox}}
+{\footnotesize\ttfamily System.\+Windows.\+Forms.\+Combo\+Box Project1.\+Event\+Info.\+times\+Box\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+Project1/\hyperlink{EventInfo_8cs}{Event\+Info.\+cs}\item 
+Project1/\hyperlink{EventInfo_8Designer_8cs}{Event\+Info.\+Designer.\+cs}\end{DoxyCompactItemize}

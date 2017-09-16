@@ -1,5 +1,9 @@
 ﻿namespace Project1
 {
+    /// <summary>
+    /// Designer for event form
+    /// </summary>
+    /// <seealso cref="System.Windows.Forms.Form" />
     partial class EventInfo
     {
         /// <summary>
