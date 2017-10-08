@@ -89,9 +89,9 @@ namespace Project1
 				return;
 			timesBox.Items.Clear();
 			Event ev = eventsBox.SelectedItem as Event;
-			for (int i = 0; i < ev.times.Length; i++)
+			for (int i = 0; i < ev.dateTimes.Length; i++)
 			{
-				timesBox.Items.Add(ev.times[i].ToString("hh:mm tt"));
+                timesBox.Items.Add(ev.dateTimes[i].ToString("MM/dd/yyyy hh:mm tt"));
 			}
 		}
 
@@ -119,7 +119,7 @@ namespace Project1
 			}
 
 			Event ev = MainWindow.EventsList.Find(x => x.ToString() == (eventsBox.SelectedItem as Event).ToString());
-            Attendee attendee = new Attendee(nameBox.Text, ev, TimeSlots(), attendeeTask_List);
+			Attendee attendee = new Attendee(nameBox.Text, ev, TimeSlots(), attendeeTask_List);
 			if (ev.attendees.Find(x => x.name == attendee.name) != null)
 			{
 				MessageBox.Show(attendee.name + " is already attending event " + ev.name + ".");
@@ -168,7 +168,7 @@ namespace Project1
 		/// <param name="e">The <see cref="EventArgs" /> instance containing the event data.</param>
 		private void clearTasks_Click(object sender, EventArgs e)
 		{
-            tasksList.Items.Clear();
+			tasksList.Items.Clear();
 		}
 
 		/// <summary>
@@ -178,20 +178,20 @@ namespace Project1
 		/// <param name="e">The <see cref="EventArgs" /> instance containing the event data.</param>
 		private void addTask_Click(object sender, EventArgs e)
 		{
-            if (selectTask.SelectedItem == null)
+			if (selectTask.SelectedItem == null)
 			{
 				MessageBox.Show("Select an available Task.");
 				return;
 			}
 
-            if (tasksList.Items.Contains(selectTask.SelectedItem))
+			if (tasksList.Items.Contains(selectTask.SelectedItem))
 			{
 				MessageBox.Show("The selected Task has already been added.");
 				return;
 			}
 
-            tasksList.Items.Add(selectTask.SelectedItem);
-            attendeeTask_List.Add(selectTask.SelectedItem.ToString());
+			tasksList.Items.Add(selectTask.SelectedItem);
+			attendeeTask_List.Add(selectTask.SelectedItem.ToString());
 		}
 
 		/// <summary>
@@ -203,15 +203,15 @@ namespace Project1
 		{
 			if (selectTask.SelectedItem == null)
 				return;
-            selectTask.Items.Clear();
-            Event ev = selectTask.SelectedItem as Event;
-            for (int i = 0; i < ev.taskList.Count; i++)
+			selectTask.Items.Clear();
+			Event ev = selectTask.SelectedItem as Event;
+			for (int i = 0; i < ev.taskList.Count; i++)
 			{
-                selectTask.Items.Add(ev.taskList[i]); //fills out the select task combo box with itmes from the events task list
+				selectTask.Items.Add(ev.taskList[i]); //fills out the select task combo box with itmes from the events task list
 			}
 		}
 
-        private List<String> attendeeTask_List = new List<string>(); //list to keep track of the tasks an attendee signs up for
+		private List<String> attendeeTask_List = new List<string>(); //list to keep track of the tasks an attendee signs up for
 
 	}
 }
