@@ -30,16 +30,22 @@
             Gets the available times.
             </summary>
             <value>
-            The available times.
+            The available dates and times.
             </value>
         </member>
-        <member name="M:Project1.Attendee.#ctor(System.String,Project1.Event,System.DateTime[])">
+        <member name="F:Project1.Attendee.attendeeTasks">
+            <summary>
+            The tasks the attendee signs up for
+            </summary>
+        </member>
+        <member name="M:Project1.Attendee.#ctor(System.String,Project1.Event,System.DateTime[],System.Collections.Generic.List{System.String})">
             <summary>
             Initializes a new instance of the <see cref="T:Project1.Attendee" /> class.
             </summary>
             <param name="Name">The name.</param>
             <param name="Ev">The ev.</param>
             <param name="AvailableTimes">The available times.</param>
+            <param name="AttendeeTasks">The available times.</param>
         </member>
         <member name="T:Project1.AvailabilityForm">
             <summary>
@@ -102,6 +108,27 @@
         <member name="M:Project1.AvailabilityForm.clearButton_Click(System.Object,System.EventArgs)">
             <summary>
             Handles the Click event of the clearButton control.
+            </summary>
+            <param name="sender">The source of the event.</param>
+            <param name="e">The <see cref="T:System.EventArgs" /> instance containing the event data.</param>
+        </member>
+        <member name="M:Project1.AvailabilityForm.clearTasks_Click(System.Object,System.EventArgs)">
+            <summary>
+            Handles the Click event of the clearTask control.
+            </summary>
+            <param name="sender">The source of the event.</param>
+            <param name="e">The <see cref="T:System.EventArgs" /> instance containing the event data.</param>
+        </member>
+        <member name="M:Project1.AvailabilityForm.addTask_Click(System.Object,System.EventArgs)">
+            <summary>
+            Handles the Click event of the addTask control.
+            </summary>
+            <param name="sender">The source of the event.</param>
+            <param name="e">The <see cref="T:System.EventArgs" /> instance containing the event data.</param>
+        </member>
+        <member name="M:Project1.AvailabilityForm.selectTask_SelectedIndexChanged(System.Object,System.EventArgs)">
+            <summary>
+            Handles the SelectedIndexChanged event of the selectTask control.
             </summary>
             <param name="sender">The source of the event.</param>
             <param name="e">The <see cref="T:System.EventArgs" /> instance containing the event data.</param>
@@ -185,6 +212,20 @@
             <param name="sender">The source of the event.</param>
             <param name="e">The <see cref="T:System.EventArgs" /> instance containing the event data.</param>
         </member>
+        <member name="M:Project1.EventInfo.addTaskButton_Click(System.Object,System.EventArgs)">
+            <summary>
+            Adds string from the taskBox to the taskListBox
+            </summary>
+            <param name="sender">The source of the event.</param>
+            <param name="e">The <see cref="T:System.EventArgs" /> instance containing the event data.</param>
+        </member>
+        <member name="M:Project1.EventInfo.clearTaskList_Click(System.Object,System.EventArgs)">
+            <summary>
+            Deletes all tasks listed in the taskListBox
+            </summary>
+            <param name="sender">The source of the event.</param>
+            <param name="e">The <see cref="T:System.EventArgs" /> instance containing the event data.</param>
+        </member>
         <member name="F:Project1.EventInfo.components">
             <summary>
             Required designer variable.
@@ -223,7 +264,7 @@
             The host.
             </value>
         </member>
-        <member name="P:Project1.Event.date">
+        <member name="P:Project1.Event.dateTimes">
             <summary>
             Gets the date.
             </summary>
@@ -231,27 +272,24 @@
             The date.
             </value>
         </member>
-        <member name="P:Project1.Event.times">
-            <summary>
-            Gets the times.
-            </summary>
-            <value>
-            The times.
-            </value>
-        </member>
         <member name="F:Project1.Event.attendees">
             <summary>
             The attendees
             </summary>
         </member>
-        <member name="M:Project1.Event.#ctor(System.String,System.String,System.DateTime,System.DateTime[])">
+        <member name="F:Project1.Event.taskList">
+            <summary>
+            The Task List
+            </summary>
+        </member>
+        <member name="M:Project1.Event.#ctor(System.String,System.String,System.DateTime[],System.Collections.Generic.List{System.String})">
             <summary>
             Initializes a new instance of the <see cref="T:Project1.Event" /> class.
             </summary>
             <param name="Host">The host.</param>
             <param name="Name">The name.</param>
-            <param name="Date">The date.</param>
-            <param name="Times">The times.</param>
+            <param name="DateTimes">The dates and times.</param>
+            <param name="TaskList">The list of tasks.</param>
         </member>
         <member name="M:Project1.Event.ToString">
             <summary>
@@ -343,7 +381,7 @@
             Class for helping with file storage/reading
             </summary>
         </member>
-        <member name="M:Project1.Storage.TimesFormatted(System.DateTime[],System.Boolean)">
+        <member name="M:Project1.Storage.DateTimesFormatted(System.DateTime[],System.Boolean)">
             <summary>
             Formats a DateTime array into a string
             </summary>
@@ -351,17 +389,31 @@
             <param name="mode24">if set to <c>true</c> [mode24].</param>
             <returns></returns>
         </member>
-        <member name="M:Project1.Storage.ReadTimes(System.String[])">
+        <member name="M:Project1.Storage.TaskListFormatted(System.Collections.Generic.List{System.String})">
+            <summary>
+            Formats a task list into a string
+            </summary>
+            <param name="tasks">The tasks.</param>
+            <returns></returns>
+        </member>
+        <member name="M:Project1.Storage.ReadDateTimes(System.String[])">
             <summary>
             Reads the times.
             </summary>
             <param name="times">The times.</param>
             <returns></returns>
         </member>
+        <member name="M:Project1.Storage.ReadTasks(System.String[])">
+            <summary>
+            Reads the tasks.
+            </summary>
+            <param name="tasks">The tasks.</param>
+            <returns></returns>
+        </member>
         <member name="M:Project1.Storage.AddEvent(Project1.Event)">
             <summary>
             Adds Event to file.
-            Output Format: user_name    event_name  event_time  [times available] separated by a ,
+            Output Format: user_name    event_name  [times available]   separated by a ,
             </summary>
             <param name="ev">The ev.</param>
         </member>
