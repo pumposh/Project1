@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Windows.Forms;
 
 namespace Project1
@@ -163,6 +163,26 @@ namespace Project1
                 else
                     listBox1.Items[i] = DateTime.Parse(listBox1.Items[i].ToString()).ToString("hh:mm tt");
             }
+        }
+
+        private void taskBox_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void clearTaskList_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void addTaskButton_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void taskBox_TextChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }
