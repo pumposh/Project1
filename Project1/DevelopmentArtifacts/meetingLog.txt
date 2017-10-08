@@ -1,0 +1,61 @@
+Meeting Number: 1
+Date: 9/27/2017
+Time: 11:35 - 11:50
+Location: Spahr 2 Classroom
+Completed:
+- Created base outline of deliverables leading up to project deadline.
+- Organized two future team meeting dates (Thursday and Friday)
+To be Completed:
+- set up environment, assess previous teams code base to develop ideas for implementation
+Reflection on Previous Tasks:
+- N/A (First meeting no previous tasks assigned)
+
+Meeting Number: 2
+Date: 9/29/2017
+Time: 11:05
+Location: Spahr classroom
+Reflection on previous tasks:
+- Environments have been set up.
+- Code base has been reviewed and implementation details have been brain stormed.
+Completed:
+- we set up specific assignments to be completed before Monday.
+- planned future meeting for Wednesday morning at 9.
+To Be Completed:
+-Pumposh will begin working on the multi-day scheduling
+-Vivek will begin working on the task list
+-Menita will begin working on the view modes.
+
+Meeting Number: 3
+Date: 10/02/2017
+Time: 11:42
+Location: Spahr classroom
+Reflection on previous tasks:
+- all group members have began working on projects. Not much work has been done throughout yet.
+Completed:
+-Quick meeting for members to update team on their individual status on the project.
+To Be Completed:
+- Group members to continue to work on specific assignments until next meeting.
+
+Meeting Number: 4
+Date: 10/03/2017
+Time: 12:15
+Location: Underground
+Reflection on previous tasks:
+- Team spent week working on assignments as planned. As a group, we realized our previous implementation strategy was not affective for the task, so we decided to divide tasks in a new way.
+Completed:
+-work time meeting to be able to code and develop individual assignments together as a group. New tasks have been distributed as outlined below.
+To Be Completed:
+- Pumposh works on multi day tasking
+- Vivek will work on adding the task list to the event class
+- Menita will adjust the attendee class so that the attendees can pick a task to choose from.
+
+Meeting Number: 5
+Date: 10/04/2017
+Time: 11:37
+Location: Spahr 2 Classroom
+Reflection on previous tasks:
+- all group member have began working on newly assigned tasks. After assessing the code further, we have realized we don't really understand how the display works in visual studios in order to add buttons, labels, list boxes, etc...
+Completed:
+- spent the meeting mainly discussing concerns with our individual assignments. Took time to communicate issues and help each other solve our unique problems.
+To Be Completed:
+- main task for all group member for next meeting is to explore the designer files and understand how to effectively interact with the different objects in the designer file.
