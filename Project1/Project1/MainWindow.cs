@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Windows.Forms;
@@ -100,7 +100,7 @@ namespace Project1
                 {
                     ListViewItem item2 = new ListViewItem();
                     item2.Text = f.ev.name;
-                    item2.SubItems.AddRange(new string[] { f.name, Storage.TimesFormatted(f.availableTimes, checkBox1.Checked) });
+                    item2.SubItems.AddRange(new string[] { f.name, Storage.DateTimesFormatted(f.availableTimes, checkBox1.Checked) });
                     attendeeView.Items.Add(item2);
                 }
         }
@@ -117,7 +117,7 @@ namespace Project1
                 {
                     ListViewItem item = new ListViewItem();
                     item.Text = ev.name;
-                    item.SubItems.AddRange(new string[] { ev.host, ev.date.ToString("MM/dd/yyyy"), ev.attendees.Count.ToString(), Storage.TimesFormatted(ev.times, checkBox1.Checked) });
+                    item.SubItems.AddRange(new string[] { ev.host, ev.attendees.Count.ToString(), Storage.DateTimesFormatted(ev.dateTimes, checkBox1.Checked) });
                     eventView.Items.Add(item);
                 }
             }
