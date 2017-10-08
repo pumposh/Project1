@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Windows.Forms;
 
 namespace Project1
@@ -153,6 +153,26 @@ namespace Project1
         private void clearButton_Click(object sender, EventArgs e)
         {
             listBox1.Items.Clear();
+        }
+
+        private void tasksList_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void clearTasks_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void addTask_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void selectTask_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }
