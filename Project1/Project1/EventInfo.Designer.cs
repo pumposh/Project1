@@ -1,4 +1,4 @@
-﻿namespace Project1
+namespace Project1
 {
 	/// <summary>
 	/// Designer for event form
