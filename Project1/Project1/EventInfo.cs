@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Windows.Forms;
 
@@ -101,7 +101,7 @@ namespace Project1
 				return;
 			}
 
-            Event ev = new Event(nameBox.Text, eventNameBox.Text, eventTime, TimeSlots(), task_List);
+			Event ev = new Event(nameBox.Text, eventNameBox.Text, TimeSlots(eventTime), task_List);
 			if (MainWindow.EventsList.Find(x => x.ToString() == ev.ToString()) != null)
 			{
 				MessageBox.Show("This event has already been scheduled.");
@@ -117,9 +117,10 @@ namespace Project1
 		/// Times the slots.
 		/// </summary>
 		/// <returns></returns>
-		private DateTime[] TimeSlots()
+		private DateTime[] TimeSlots(DateTime date)
 		{
 			DateTime[] times = new DateTime[listBox1.Items.Count];
+
 			for (int i = 0; i < listBox1.Items.Count; i++)
 			{
 				times[i] = DateTime.Parse(listBox1.Items[i].ToString());
@@ -178,7 +179,7 @@ namespace Project1
 		/// <param name="e">The <see cref="EventArgs" /> instance containing the event data.</param>
 		private void clearTaskList_Click(object sender, EventArgs e)
 		{
-            taskListBox.Items.Clear();
+			taskListBox.Items.Clear();
 		}
 
 		/// <summary>
@@ -188,29 +189,29 @@ namespace Project1
 		/// <param name="e">The <see cref="EventArgs" /> instance containing the event data.</param>
 		private void addTaskButton_Click(object sender, EventArgs e)
 		{
-            for (int i = 0; i < task_List.Count; i++) 
-            {
-                if (taskBox.Text == task_List[i]) //checks to see if task has already been created.
+			for (int i = 0; i < task_List.Count; i++)
+			{
+				if (taskBox.Text == task_List[i]) //checks to see if task has already been created.
 				{
-                    MessageBox.Show("This task has already been added to the Task List.");   
-                }
-            }
-            if (taskBox.Text == String.Empty) //checks to see if user clicks task button when task box is empty.
-            {
-                MessageBox.Show("Enter a task.");
-                return;
-            }
-            else
-            {
-                taskListBox.Items.Add(taskBox.Text); //adds string from taskBox to the taskListBox
-                task_List.Add(taskBox.Text); //adds string to a Last of strings that will keep track of the task List for the event.
-            }
+					MessageBox.Show("This task has already been added to the Task List.");
+				}
+			}
+			if (taskBox.Text == String.Empty) //checks to see if user clicks task button when task box is empty.
+			{
+				MessageBox.Show("Enter a task.");
+				return;
+			}
+			else
+			{
+				taskListBox.Items.Add(taskBox.Text); //adds string from taskBox to the taskListBox
+				task_List.Add(taskBox.Text); //adds string to a Last of strings that will keep track of the task List for the event.
+			}
 		}
 
 		private void taskBox_TextChanged(object sender, EventArgs e)
 		{
 
 		}
-        private List<String> task_List = new List<string>(); //list to keep track of the strings entered into the task box
+		private List<String> task_List = new List<string>(); //list to keep track of the strings entered into the task box
 	}
 }
