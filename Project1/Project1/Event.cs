@@ -40,6 +40,10 @@ namespace Project1
         /// The attendees
         /// </summary>
         public List<Attendee> attendees = new List<Attendee>();
+		/// <summary>
+		/// The Task List
+		/// </summary>
+		public List<string> taskList = new List<string>(); //&&&
 
         /// <summary>
         /// Initializes a new instance of the <see cref="Event" /> class.
@@ -48,12 +52,13 @@ namespace Project1
         /// <param name="Name">The name.</param>
         /// <param name="Date">The date.</param>
         /// <param name="Times">The times.</param>
-        public Event(string Host, string Name, DateTime Date, DateTime[] Times)
+        public Event(string Host, string Name, DateTime Date, DateTime[] Times, List<string> TaskList)
         {
             name = Name;
             host = Host;
             date = Date;
             times = Times;
+            taskList = TaskList;
             attendees.Add(new Attendee(host, this, times));
         }
 

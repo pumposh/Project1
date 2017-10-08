@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Windows.Forms;
 
 namespace Project1
@@ -100,7 +101,7 @@ namespace Project1
 				return;
 			}
 
-			Event ev = new Event(nameBox.Text, eventNameBox.Text, eventTime, TimeSlots());
+            Event ev = new Event(nameBox.Text, eventNameBox.Text, eventTime, TimeSlots(), task_List);
 			if (MainWindow.EventsList.Find(x => x.ToString() == ev.ToString()) != null)
 			{
 				MessageBox.Show("This event has already been scheduled.");
@@ -171,7 +172,7 @@ namespace Project1
 		}
 
 		/// <summary>
-		/// Deletes all tasks listed in the Task List Box
+		/// Deletes all tasks listed in the taskListBox
 		/// </summary>
 		/// <param name="sender">The source of the event.</param>
 		/// <param name="e">The <see cref="EventArgs" /> instance containing the event data.</param>
@@ -180,14 +181,36 @@ namespace Project1
             taskListBox.Items.Clear();
 		}
 
+		/// <summary>
+		/// Adds string from the taskBox to the taskListBox
+		/// </summary>
+		/// <param name="sender">The source of the event.</param>
+		/// <param name="e">The <see cref="EventArgs" /> instance containing the event data.</param>
 		private void addTaskButton_Click(object sender, EventArgs e)
 		{
-            taskListBox.Items.Add(taskBox.Text);
+            for (int i = 0; i < task_List.Count; i++) 
+            {
+                if (taskBox.Text == task_List[i]) //checks to see if task has already been created.
+				{
+                    MessageBox.Show("This task has already been added to the Task List.");   
+                }
+            }
+            if (taskBox.Text == String.Empty) //checks to see if user clicks task button when task box is empty.
+            {
+                MessageBox.Show("Enter a task.");
+                return;
+            }
+            else
+            {
+                taskListBox.Items.Add(taskBox.Text); //adds string from taskBox to the taskListBox
+                task_List.Add(taskBox.Text); //adds string to a Last of strings that will keep track of the task List for the event.
+            }
 		}
 
 		private void taskBox_TextChanged(object sender, EventArgs e)
 		{
 
 		}
+        private List<String> task_List = new List<string>(); //list to keep track of the strings entered into the task box
 	}
 }
