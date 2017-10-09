@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 
 namespace Project1
@@ -28,34 +28,32 @@ namespace Project1
         /// <value>
         /// The date.
         /// </value>
-        public DateTime date { get; private set; }
-        /// <summary>
-        /// Gets the times.
-        /// </summary>
-        /// <value>
-        /// The times.
-        /// </value>
-        public DateTime[] times { get; private set; }
+        public DateTime[] dateTimes { get; private set; }
         /// <summary>
         /// The attendees
         /// </summary>
         public List<Attendee> attendees = new List<Attendee>();
 
         /// <summary>
-        /// Initializes a new instance of the <see cref="Event" /> class.
+        /// The Task List
         /// </summary>
-        /// <param name="Host">The host.</param>
-        /// <param name="Name">The name.</param>
-        /// <param name="Date">The date.</param>
-        /// <param name="Times">The times.</param>
-        public Event(string Host, string Name, DateTime Date, DateTime[] Times)
-        {
-            name = Name;
-            host = Host;
-            date = Date;
-            times = Times;
-            attendees.Add(new Attendee(host, this, times));
-        }
+        public List<string> taskList = new List<string>();
+
+		/// <summary>
+		/// Initializes a new instance of the <see cref="Event" /> class.
+		/// </summary>
+		/// <param name="Host">The host.</param>
+		/// <param name="Name">The name.</param>
+		/// <param name="DateTimes">The dates and times.</param>
+		/// <param name="TaskList">The list of tasks.</param>
+        public Event(string Host, string Name, DateTime[] DateTimes, List<string> TaskList)
+		{
+			name = Name;
+			host = Host;
+			dateTimes = DateTimes;
+			taskList = TaskList;
+            attendees.Add(new Attendee(host, this, dateTimes, new List<string>()));
+		}
 
         /// <summary>
         /// Returns a <see cref="System.String" /> that represents this instance.
@@ -65,7 +63,21 @@ namespace Project1
         /// </returns>
         public override string ToString()
         {
-            return name + " on " + date.ToString("MM/dd/yyyy");
+            String builder = name + " on ";
+
+            for (int i = 0; i < dateTimes.Length; i++)
+            {
+                if (i == 0)
+                {
+                    builder += dateTimes[i].ToString("MM/dd/yyyy");
+				}
+                else if (!(dateTimes[i].ToString("MM/dd/yyyy").Equals(dateTimes[i - 1].ToString("MM/dd/yyyy"))))
+                {
+                    builder += ", " + dateTimes[i].ToString("MM/dd/yyyy");
+				}
+			}
+
+            return builder;
         }
     }
 }
