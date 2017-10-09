@@ -52,7 +52,7 @@ namespace Project1
 			host = Host;
 			dateTimes = DateTimes;
 			taskList = TaskList;
-            attendees.Add(new Attendee(host, this, dateTimes, taskList));
+            attendees.Add(new Attendee(host, this, dateTimes, new List<string>()));
 		}
 
         /// <summary>

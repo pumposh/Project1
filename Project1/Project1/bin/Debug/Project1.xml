@@ -47,6 +47,11 @@
             <param name="AvailableTimes">The available times.</param>
             <param name="AttendeeTasks">The available times.</param>
         </member>
+        <member name="M:Project1.Attendee.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:Project1.Attendee" /> class.
+            </summary>
+        </member>
         <member name="T:Project1.AvailabilityForm">
             <summary>
             Form for adding availability
@@ -105,6 +110,12 @@
             </summary>
             <returns></returns>
         </member>
+        <member name="M:Project1.AvailabilityForm.taskList">
+            <summary>
+            creates task array of strings
+            </summary>
+            <returns></returns>
+        </member>
         <member name="M:Project1.AvailabilityForm.clearButton_Click(System.Object,System.EventArgs)">
             <summary>
             Handles the Click event of the clearButton control.
@@ -119,16 +130,16 @@
             <param name="sender">The source of the event.</param>
             <param name="e">The <see cref="T:System.EventArgs" /> instance containing the event data.</param>
         </member>
-        <member name="M:Project1.AvailabilityForm.addTask_Click(System.Object,System.EventArgs)">
+        <member name="M:Project1.AvailabilityForm.taskListDropDown_SelectedIndexChanged(System.Object,System.EventArgs)">
             <summary>
-            Handles the Click event of the addTask control.
+            Handles the SelectedIndexChanged event of the selectTask control.
             </summary>
             <param name="sender">The source of the event.</param>
             <param name="e">The <see cref="T:System.EventArgs" /> instance containing the event data.</param>
         </member>
-        <member name="M:Project1.AvailabilityForm.selectTask_SelectedIndexChanged(System.Object,System.EventArgs)">
+        <member name="M:Project1.AvailabilityForm.addTaskButton_Click(System.Object,System.EventArgs)">
             <summary>
-            Handles the SelectedIndexChanged event of the selectTask control.
+            Handles the Click event of the addTask control.
             </summary>
             <param name="sender">The source of the event.</param>
             <param name="e">The <see cref="T:System.EventArgs" /> instance containing the event data.</param>

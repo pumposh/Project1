@@ -77,6 +77,7 @@ namespace Project1
             this.dateTimePicker1.Name = "dateTimePicker1";
             this.dateTimePicker1.Size = new System.Drawing.Size(148, 26);
             this.dateTimePicker1.TabIndex = 2;
+            this.dateTimePicker1.ValueChanged += new System.EventHandler(this.dateTimePicker1_ValueChanged);
             // 
             // label2
             // 
@@ -108,10 +109,10 @@ namespace Project1
             // 
             // addButton
             // 
-            this.addButton.Location = new System.Drawing.Point(187, 284);
+            this.addButton.Location = new System.Drawing.Point(233, 284);
             this.addButton.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.addButton.Name = "addButton";
-            this.addButton.Size = new System.Drawing.Size(141, 30);
+            this.addButton.Size = new System.Drawing.Size(95, 30);
             this.addButton.TabIndex = 5;
             this.addButton.Text = "Add time slot";
             this.addButton.UseVisualStyleBackColor = true;
@@ -147,8 +148,9 @@ namespace Project1
             this.timesBox.Location = new System.Drawing.Point(17, 285);
             this.timesBox.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.timesBox.Name = "timesBox";
-            this.timesBox.Size = new System.Drawing.Size(163, 28);
+            this.timesBox.Size = new System.Drawing.Size(210, 28);
             this.timesBox.TabIndex = 4;
+            this.timesBox.SelectedIndexChanged += new System.EventHandler(this.timesBox_SelectedIndexChanged);
             // 
             // addEventButton
             // 

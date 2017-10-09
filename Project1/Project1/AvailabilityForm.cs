@@ -21,12 +21,14 @@ namespace Project1
 			main = m;
 		}
 
-		/// <summary>
-		/// Handles the 1 event of the AvailabilityForm_Load control.
-		/// </summary>
-		/// <param name="sender">The source of the event.</param>
-		/// <param name="e">The <see cref="EventArgs" /> instance containing the event data.</param>
-		private void AvailabilityForm_Load_1(object sender, EventArgs e)
+        private List<String> attendeeTask_List = new List<string>(); //list to keep track of the tasks an attendee signs up for
+
+        /// <summary>
+        /// Handles the 1 event of the AvailabilityForm_Load control.
+        /// </summary>
+        /// <param name="sender">The source of the event.</param>
+        /// <param name="e">The <see cref="EventArgs" /> instance containing the event data.</param>
+        private void AvailabilityForm_Load_1(object sender, EventArgs e)
 		{
 			MainWindow.EventsList.ForEach((Event ev) =>
 			{
@@ -88,12 +90,18 @@ namespace Project1
 			if (eventsBox.SelectedItem == null)
 				return;
 			timesBox.Items.Clear();
+            taskListDropDown.Items.Clear();
 			Event ev = eventsBox.SelectedItem as Event;
 			for (int i = 0; i < ev.dateTimes.Length; i++)
 			{
                 timesBox.Items.Add(ev.dateTimes[i].ToString("MM/dd/yyyy hh:mm tt"));
 			}
-		}
+
+            for (int i = 0; i < ev.taskList.Count; i++)
+            {
+                taskListDropDown.Items.Add(ev.taskList[i]); //fills out the select task combo box with itmes from the events task list
+            }
+        }
 
 		/// <summary>
 		/// Handles the Click event of the attendeeButton control.
@@ -117,10 +125,15 @@ namespace Project1
 				MessageBox.Show("Give some available times.");
 				return;
 			}
+            
 
 			Event ev = MainWindow.EventsList.Find(x => x.ToString() == (eventsBox.SelectedItem as Event).ToString());
-			Attendee attendee = new Attendee(nameBox.Text, ev, TimeSlots(), attendeeTask_List);
-			if (ev.attendees.Find(x => x.name == attendee.name) != null)
+			Attendee attendee = new Attendee(nameBox.Text, ev, TimeSlots(), taskList());
+            if (taskListDropDown.SelectedValue == null)
+            {
+                attendee.attendeeTasks.Add(",");
+            }
+			else if (ev.attendees.Find(x => x.name == attendee.name) != null)
 			{
 				MessageBox.Show(attendee.name + " is already attending event " + ev.name + ".");
 				return;
@@ -129,6 +142,8 @@ namespace Project1
 			Storage.AddAttendee(attendee);
 			main.ReloadAttendees();
 			main.ReloadEvents();
+
+
 			MessageBox.Show("Attendee information has been added.");
 		}
 
@@ -146,12 +161,27 @@ namespace Project1
 			return times;
 		}
 
-		/// <summary>
-		/// Handles the Click event of the clearButton control.
-		/// </summary>
-		/// <param name="sender">The source of the event.</param>
-		/// <param name="e">The <see cref="EventArgs" /> instance containing the event data.</param>
-		private void clearButton_Click(object sender, EventArgs e)
+        /// <summary>
+        /// creates task array of strings
+        /// </summary>
+        /// <returns></returns>
+        private List<String> taskList()
+        {
+            List<string> tasks = new List<string>();
+            for (int i = 0; i < tasksList.Items.Count; i++)
+            {
+                tasks.Add(tasksList.Items[i].ToString());
+            }
+            tasks.Add("");
+            return tasks;
+        }
+
+        /// <summary>
+        /// Handles the Click event of the clearButton control.
+        /// </summary>
+        /// <param name="sender">The source of the event.</param>
+        /// <param name="e">The <see cref="EventArgs" /> instance containing the event data.</param>
+        private void clearButton_Click(object sender, EventArgs e)
 		{
 			listBox1.Items.Clear();
 		}
@@ -171,47 +201,38 @@ namespace Project1
 			tasksList.Items.Clear();
 		}
 
-		/// <summary>
-		/// Handles the Click event of the addTask control.
-		/// </summary>
-		/// <param name="sender">The source of the event.</param>
-		/// <param name="e">The <see cref="EventArgs" /> instance containing the event data.</param>
-		private void addTask_Click(object sender, EventArgs e)
-		{
-			if (selectTask.SelectedItem == null)
-			{
-				MessageBox.Show("Select an available Task.");
-				return;
-			}
 
-			if (tasksList.Items.Contains(selectTask.SelectedItem))
-			{
-				MessageBox.Show("The selected Task has already been added.");
-				return;
-			}
 
-			tasksList.Items.Add(selectTask.SelectedItem);
-			attendeeTask_List.Add(selectTask.SelectedItem.ToString());
-		}
+        /// <summary>
+        /// Handles the SelectedIndexChanged event of the selectTask control.
+        /// </summary>
+        /// <param name="sender">The source of the event.</param>
+        /// <param name="e">The <see cref="EventArgs" /> instance containing the event data.</param>
+        private void taskListDropDown_SelectedIndexChanged(object sender, EventArgs e)
+        {
 
-		/// <summary>
-		/// Handles the SelectedIndexChanged event of the selectTask control.
-		/// </summary>
-		/// <param name="sender">The source of the event.</param>
-		/// <param name="e">The <see cref="EventArgs" /> instance containing the event data.</param>
-		private void selectTask_SelectedIndexChanged(object sender, EventArgs e)
-		{
-			if (selectTask.SelectedItem == null)
-				return;
-			selectTask.Items.Clear();
-			Event ev = selectTask.SelectedItem as Event;
-			for (int i = 0; i < ev.taskList.Count; i++)
-			{
-				selectTask.Items.Add(ev.taskList[i]); //fills out the select task combo box with itmes from the events task list
-			}
-		}
+        }
 
-		private List<String> attendeeTask_List = new List<string>(); //list to keep track of the tasks an attendee signs up for
+        /// <summary>
+        /// Handles the Click event of the addTask control.
+        /// </summary>
+        /// <param name="sender">The source of the event.</param>
+        /// <param name="e">The <see cref="EventArgs" /> instance containing the event data.</param>
+        private void addTaskButton_Click(object sender, EventArgs e)
+        {
+            if (taskListDropDown.SelectedItem == null)
+            {
+                MessageBox.Show("Select an available task.");
+                return;
+            }
 
-	}
+            if (tasksList.Items.Contains(taskListDropDown.SelectedItem))
+            {
+                MessageBox.Show("The selected task has already been added.");
+                return;
+            }
+
+            tasksList.Items.Add(taskListDropDown.SelectedItem);
+        }
+    }
 }

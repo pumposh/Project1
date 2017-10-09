@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using System.Globalization;
 using System.Windows.Forms;
 
 namespace Project1
@@ -42,6 +43,8 @@ namespace Project1
                 MessageBox.Show("The selected time has already been added.");
                 return;
             }
+
+            DateTime.TryParse(dateTimePicker1.Text, out DateTime date);
 
             if (listBox1.Items.Count == 0)
                 listBox1.Items.Add(timesBox.SelectedItem);
@@ -100,7 +103,7 @@ namespace Project1
                 MessageBox.Show("Enter your event times.");
                 return;
             }
-
+            task_List.Add("");
             Event ev = new Event(nameBox.Text, eventNameBox.Text, TimeSlots(), task_List);
             if (MainWindow.EventsList.Find(x => x.ToString() == ev.ToString()) != null)
             {
@@ -138,7 +141,7 @@ namespace Project1
             DateTime time = DateTime.Parse("00:00");
             for (int i = 0; i < 48; i++)
             {
-                timesBox.Items.Add(time.ToString("hh:mm tt"));
+                timesBox.Items.Add(time.ToString("MM/dd/yyyy hh:mm tt"));
                 time = time.AddMinutes(30);
             }
         }
@@ -153,16 +156,16 @@ namespace Project1
             for (int i = 0; i < 48; i++)
             {
                 if (checkBox1.Checked)
-                    timesBox.Items[i] = DateTime.Parse(timesBox.Items[i].ToString()).ToString("HH:mm");
+                    timesBox.Items[i] = DateTime.Parse(timesBox.Items[i].ToString()).ToString("MM/dd/yyyy HH:mm");
                 else
-                    timesBox.Items[i] = DateTime.Parse(timesBox.Items[i].ToString()).ToString("hh:mm tt");
+                    timesBox.Items[i] = DateTime.Parse(timesBox.Items[i].ToString()).ToString("MM/dd/yyyy hh:mm tt");
             }
             for (int i = 0; i < listBox1.Items.Count; i++)
             {
                 if (checkBox1.Checked)
-                    listBox1.Items[i] = DateTime.Parse(listBox1.Items[i].ToString()).ToString("HH:mm");
+                    listBox1.Items[i] = DateTime.Parse(listBox1.Items[i].ToString()).ToString("MM/dd/yyyy HH:mm");
                 else
-                    listBox1.Items[i] = DateTime.Parse(listBox1.Items[i].ToString()).ToString("hh:mm tt");
+                    listBox1.Items[i] = DateTime.Parse(listBox1.Items[i].ToString()).ToString("MM/dd/yyyy hh:mm tt");
             }
         }
 
@@ -176,6 +179,7 @@ namespace Project1
         {
 
         }
+
         private List<String> task_List = new List<string>(); //list to keep track of the strings entered into the task box
 
 
@@ -201,7 +205,7 @@ namespace Project1
                 taskListBox.Items.Add(taskBox.Text); //adds string from taskBox to the taskListBox
                 task_List.Add(taskBox.Text); //adds string to a Last of strings that will keep track of the task List for the event.
             }
-            }
+        }
 
         /// <summary>
         /// Deletes all tasks listed in the taskListBox
@@ -211,6 +215,27 @@ namespace Project1
         private void clearTaskList_Click(object sender, EventArgs e)
         {
             taskListBox.Items.Clear();
+        }
+
+        private void timesBox_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        /// <summary>
+        /// Changes time values when date is changed
+        /// </summary>
+        /// <param name="sender">The source of the event.</param>
+        /// <param name="e">The <see cref="EventArgs" /> instance containing the event data.</param>
+        private void dateTimePicker1_ValueChanged(object sender, EventArgs e)
+        {
+            timesBox.Items.Clear();
+            DateTime time = dateTimePicker1.Value.Date;
+            for (int i = 0; i < 48; i++)
+            {
+                timesBox.Items.Add(time.ToString("MM/dd/yyyy hh:mm tt"));
+                time = time.AddMinutes(30);
+            }
         }
     }
 }

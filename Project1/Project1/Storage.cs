@@ -1,6 +1,7 @@
 using System;
 using System.IO;
 using System.Collections.Generic;
+using System.Globalization;
 
 namespace Project1
 {
@@ -35,7 +36,26 @@ namespace Project1
             return builder;
         }
 
+        internal static String datesFormatted(DateTime[] times)
+        {
+            string builder = string.Empty;
+            if (times.Length == 0)
+                return builder;
+            string[] dates = new string[times.Length];
 
+            for (int i = 0; i < times.Length - 1; i++)
+            {
+                if (dates[i] != times[i].ToString("MM/dd/yyyy"))
+                {
+                    builder += times[i].ToString("MM/dd/yyyy") + ", ";
+                    dates[i] = times[i].ToString("MM/dd/yyyy");
+                }
+            }
+
+            builder += times[times.Length - 1].ToString("MM/dd/yyyy");
+            return builder;
+
+        }
 		/// <summary>
 		/// Formats a task list into a string
 		/// </summary>
@@ -46,9 +66,9 @@ namespace Project1
             String builder = String.Empty;
 
             if (tasks.Count == 0)
-                return builder;
+                return ",";
 
-            for (int i = 0; i < tasks.Count; i++)
+            for (int i = 0; i < tasks.Count-1; i++)
             {
                 builder += tasks[i] + ",";
             }
@@ -69,7 +89,14 @@ namespace Project1
 
             for(int i = 0; i < times.Length; i++)
             {
-                dTimes[i] = DateTime.Parse(times[i]);
+                try
+                {
+                    dTimes[i] = DateTime.ParseExact(times[i], "MM/dd/yyyy-hh:mm-tt", CultureInfo.InvariantCulture);
+                }
+                catch
+                {
+
+                }
             }
             return dTimes;
         }
@@ -141,9 +168,11 @@ namespace Project1
         /// <returns></returns>
         internal static Attendee ReadAttendee(string[] items)
         {
-            if (items.Length != 3)
+            if (items.Length != 4)
                 return null;
-            return new Attendee(items[0], MainWindow.EventsList.Find(x => x.name == items[1]), ReadDateTimes(items[2].Split(',')), ReadTasks(items[3].Split(',')));
+            
+            Attendee attendee = new Attendee(items[0], MainWindow.EventsList.Find(x => x.name == items[1]), ReadDateTimes(items[2].Split(',')), ReadTasks(items[3].Split(',')));
+            return attendee;
         }
 
 

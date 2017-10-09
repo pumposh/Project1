@@ -51,5 +51,13 @@ namespace Project1
 			availableTimes = AvailableTimes;
 			attendeeTasks = AttendeeTasks;
 		}
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="Attendee" /> class.
+        /// </summary>
+        public Attendee()
+        {
+
+        }
     }
 }
