@@ -1,2 +1,8 @@
 We used VisualStudio's GUI builder.
 Code reference: https://msdn.microsoft.com/en-us/library/aa288436(v=vs.71).aspx
+
+Link: https://www.youtube.com/watch?v=uO-3iGKp1eQ
+Date Accessed: 10/5/2017
+
+Link: https://stackoverflow.com/questions/5678216/all-possible-c-sharp-array-initialization-syntaxes
+Date Accessed: 10/7/2017
