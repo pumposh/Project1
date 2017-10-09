@@ -1,0 +1,15 @@
+Feature: Multi-day Scheduling
+Estimated Complexity: Estimated to be the most complex element given structure of previous team's project. Will need to adjust DateTime object in someway to allow user to utilize multi-day scheduling. Will have to significantly restructure program to allow for this feature.
+Estimated Time Required: 12 hours
+
+Feature: Task List
+Estimated Complexity: Task List complexity lies in adding the task list to the event and attendee classes. Will need to create new buttons/labels to interact with the new task list.
+Estimated Time Required: 8 hours
+
+Feature: Event Creator View
+Estimated Complexity: The event creator view already has a framework in place. Will need to edit the file i/o to index the elements in the correct columns on the view that is already in place. Will also need to edit event class so that in now holds a list of tasks as a member variable.
+Estimated Time Required: 6 hours
+
+Feature: Event Attendee View
+Estimated Complexity: This task will be equally complex as the event creator view. The availability form will need to be updated so that now the list of tasks can be viewed. Additionally, the attendee class will need to be updated so attendee's can now pick tasks and store tasks into the class.
+Estimated Time Required: 6 hours
